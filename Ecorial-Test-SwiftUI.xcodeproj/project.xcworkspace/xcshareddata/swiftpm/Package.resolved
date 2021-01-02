@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftUI-UDF",
+        "repositoryURL": "https://github.com/Maks-Jago/SwiftUI-UDF.git",
+        "state": {
+          "branch": null,
+          "revision": "6406ded25647678224bf7fa72f78006a79796c90",
+          "version": "0.1.21"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
