@@ -8,13 +8,15 @@
 import SwiftUI
 import SwiftUI_UDF
 
-struct MainViewComponent: Component {
+struct MainViewComponent<AddUser: Container>: Component {
     struct Props {
         var users: [UserInfo.Id]
         var userById: (UserInfo.Id) -> UserInfo
+        var addUser: AddUser
     }
     
     @State private var isUserSettings: Bool = true
+    @State private var isAddUserPresented = false
 
     var props: Props
 
@@ -41,9 +43,10 @@ extension MainViewComponent {
                 Spacer()
                 Text("My Memorials")
                 Spacer()
-                Button(action: {}) {
+                Button(action: $isAddUserPresented.toggleAction()) {
                     Image.addIcon
                 }
+                .sheetContainer(isPresented: $isAddUserPresented, container: props.addUser)
                 .padding(.trailing, 20)
             }
             .padding(.leading, 60)
@@ -119,7 +122,8 @@ struct MainViewComponent_Previews: PreviewProvider {
         MainViewComponent(props:
             .init(
                 users: [],
-                userById:  {_ in UserInfo.fakeItem()}
+                userById:  {_ in UserInfo.fakeItem()},
+                addUser: RenderContainer(viewToRender: AddUserComponent_Previews.previews)
             )
         )
     }

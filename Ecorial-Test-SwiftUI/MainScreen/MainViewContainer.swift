@@ -9,13 +9,13 @@ import SwiftUI
 import SwiftUI_UDF
 
 struct MainViewContainer: Container {
-    typealias ContainerComponent = MainViewComponent
-
+    typealias ContainerComponent = MainViewComponent<AddUserContainer>
 
     func map(state: AppState, store: AppEnvironmentStore) -> ContainerComponent.Props {
         .init(
             users: Array(state.allUsers.byId.keys).sorted { $0.value > $1.value },
-            userById: { state.allUsers.byId[$0]! }            
+            userById: { state.allUsers.byId[$0]! },
+            addUser: AddUserContainer()
         )
     }
 

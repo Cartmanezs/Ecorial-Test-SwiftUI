@@ -16,4 +16,9 @@ extension AnyAction {
     struct SetUserDetailsNavigation: AppActionable {
         let isPresented: Bool
     }
+    
+    struct UpdateUserTitle: AppActionable {
+        let text: String
+    }
 }
+   

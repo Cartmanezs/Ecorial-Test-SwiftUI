@@ -30,6 +30,9 @@
 		CEB733C625A09AB7003046B5 /* Faking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733C525A09AB7003046B5 /* Faking.swift */; };
 		CEB733CA25A09EFD003046B5 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733C925A09EFD003046B5 /* BlurView.swift */; };
 		CEBD739425A0639C008B8D91 /* SwiftUI-UDF in Frameworks */ = {isa = PBXBuildFile; productRef = CEBD739325A0639C008B8D91 /* SwiftUI-UDF */; };
+		CEFDC0D725A0DDCE004B23BE /* AddUserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC0D625A0DDCE004B23BE /* AddUserComponent.swift */; };
+		CEFDC0DA25A0DE66004B23BE /* AddUserContainer .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC0D925A0DE66004B23BE /* AddUserContainer .swift */; };
+		CEFDC0DD25A0E069004B23BE /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC0DC25A0E069004B23BE /* Binding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,9 @@
 		CEB733C125A09A37003046B5 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		CEB733C525A09AB7003046B5 /* Faking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faking.swift; sourceTree = "<group>"; };
 		CEB733C925A09EFD003046B5 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		CEFDC0D625A0DDCE004B23BE /* AddUserComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserComponent.swift; sourceTree = "<group>"; };
+		CEFDC0D925A0DE66004B23BE /* AddUserContainer .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddUserContainer .swift"; sourceTree = "<group>"; };
+		CEFDC0DC25A0E069004B23BE /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,7 @@
 		CE07E3C325A0D1DD00D8207E /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CEFDC0D525A0DDB9004B23BE /* AddUserView */,
 				CE07E3BC25A0CFA100D8207E /* MainViewComponent.swift */,
 				CE07E3C025A0CFD100D8207E /* MainViewContainer.swift */,
 			);
@@ -175,6 +182,7 @@
 				CEB733A525A07819003046B5 /* ImageExtensions.swift */,
 				CE53278425A0AE7B00179866 /* DateFormatter.swift */,
 				CE07E39925A0C62300D8207E /* Color.swift */,
+				CEFDC0DC25A0E069004B23BE /* Binding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -203,6 +211,15 @@
 				CE53278725A0B9E000179866 /* RoundedCorner.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CEFDC0D525A0DDB9004B23BE /* AddUserView */ = {
+			isa = PBXGroup;
+			children = (
+				CEFDC0D625A0DDCE004B23BE /* AddUserComponent.swift */,
+				CEFDC0D925A0DE66004B23BE /* AddUserContainer .swift */,
+			);
+			path = AddUserView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,13 +299,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE53278525A0AE7B00179866 /* DateFormatter.swift in Sources */,
+				CEFDC0DA25A0DE66004B23BE /* AddUserContainer .swift in Sources */,
 				CE33410625A06029004CE32B /* AppDelegate.swift in Sources */,
+				CEFDC0DD25A0E069004B23BE /* Binding.swift in Sources */,
 				CE53278825A0B9E000179866 /* RoundedCorner.swift in Sources */,
 				CE07E3C125A0CFD100D8207E /* MainViewContainer.swift in Sources */,
 				CE07E3BD25A0CFA100D8207E /* MainViewComponent.swift in Sources */,
 				CE07E3A025A0CABB00D8207E /* Types.swift in Sources */,
 				CEB733CA25A09EFD003046B5 /* BlurView.swift in Sources */,
 				CE07E3AE25A0CBB900D8207E /* UsersFlow.swift in Sources */,
+				CEFDC0D725A0DDCE004B23BE /* AddUserComponent.swift in Sources */,
 				CE07E39A25A0C62300D8207E /* Color.swift in Sources */,
 				CEB733BE25A08EF4003046B5 /* UserRowView.swift in Sources */,
 				CE33410825A06029004CE32B /* SceneDelegate.swift in Sources */,
