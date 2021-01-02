@@ -13,6 +13,7 @@
 		CE33410C25A0602D004CE32B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE33410B25A0602D004CE32B /* Assets.xcassets */; };
 		CE33410F25A0602D004CE32B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE33410E25A0602D004CE32B /* Preview Assets.xcassets */; };
 		CE33411225A0602D004CE32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE33411025A0602D004CE32B /* LaunchScreen.storyboard */; };
+		CE53278525A0AE7B00179866 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53278425A0AE7B00179866 /* DateFormatter.swift */; };
 		CEB733A625A07819003046B5 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733A525A07819003046B5 /* ImageExtensions.swift */; };
 		CEB733BE25A08EF4003046B5 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733BD25A08EF4003046B5 /* UserRowView.swift */; };
 		CEB733C225A09A37003046B5 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733C125A09A37003046B5 /* UserInfo.swift */; };
@@ -30,6 +31,7 @@
 		CE33410E25A0602D004CE32B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE33411125A0602D004CE32B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE33411325A0602D004CE32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE53278425A0AE7B00179866 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		CEB733A525A07819003046B5 /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		CEB733BD25A08EF4003046B5 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
 		CEB733C125A09A37003046B5 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB733A525A07819003046B5 /* ImageExtensions.swift */,
+				CE53278425A0AE7B00179866 /* DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE53278525A0AE7B00179866 /* DateFormatter.swift in Sources */,
 				CE33410625A06029004CE32B /* AppDelegate.swift in Sources */,
 				CEB733CA25A09EFD003046B5 /* BlurView.swift in Sources */,
 				CEB733BE25A08EF4003046B5 /* UserRowView.swift in Sources */,
