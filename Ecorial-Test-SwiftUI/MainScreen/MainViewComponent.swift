@@ -26,11 +26,12 @@ struct MainViewComponent<AddUser: Container>: Component {
             ScrollView {
                 if self.isUserSettings {
                     usersList
+                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
                 } else {
                     Text("2")
+                        .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
                 }
             }
-            Spacer()
         }
         .padding(.top, 15)
     }

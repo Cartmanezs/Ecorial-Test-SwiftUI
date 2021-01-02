@@ -17,6 +17,7 @@ struct UserInfo: Hashable {
     let date: Date
     let image: String
     let userPhoto: String
+    let userStatus: UserStatus
 }
 
 // MARK: - Equatable
@@ -35,5 +36,11 @@ extension UserInfo: Faking {
         date = Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date()
         image = "background"
         userPhoto = "userPhoto"
+        userStatus = Int.random(in: 0...1) == 0 ? .none : .favorite
     }
+}
+
+enum UserStatus: String {
+    case none
+    case favorite
 }
