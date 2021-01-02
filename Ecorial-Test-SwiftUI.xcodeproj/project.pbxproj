@@ -14,6 +14,10 @@
 		CE33410F25A0602D004CE32B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE33410E25A0602D004CE32B /* Preview Assets.xcassets */; };
 		CE33411225A0602D004CE32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE33411025A0602D004CE32B /* LaunchScreen.storyboard */; };
 		CEB733A625A07819003046B5 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733A525A07819003046B5 /* ImageExtensions.swift */; };
+		CEB733BE25A08EF4003046B5 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733BD25A08EF4003046B5 /* UserRowView.swift */; };
+		CEB733C225A09A37003046B5 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733C125A09A37003046B5 /* UserInfo.swift */; };
+		CEB733C625A09AB7003046B5 /* Faking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733C525A09AB7003046B5 /* Faking.swift */; };
+		CEB733CA25A09EFD003046B5 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733C925A09EFD003046B5 /* BlurView.swift */; };
 		CEBD739425A0639C008B8D91 /* SwiftUI-UDF in Frameworks */ = {isa = PBXBuildFile; productRef = CEBD739325A0639C008B8D91 /* SwiftUI-UDF */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,10 @@
 		CE33411125A0602D004CE32B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE33411325A0602D004CE32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB733A525A07819003046B5 /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
+		CEB733BD25A08EF4003046B5 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
+		CEB733C125A09A37003046B5 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		CEB733C525A09AB7003046B5 /* Faking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faking.swift; sourceTree = "<group>"; };
+		CEB733C925A09EFD003046B5 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +68,13 @@
 		CE33410425A06029004CE32B /* Ecorial-Test-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				CEB733CC25A09F16003046B5 /* Views */,
+				CEB733C425A09AAE003046B5 /* Protocols */,
+				CEB733C025A09A26003046B5 /* Models */,
 				CEB733A425A07801003046B5 /* Extensions */,
 				CE33410525A06029004CE32B /* AppDelegate.swift */,
 				CE33410725A06029004CE32B /* SceneDelegate.swift */,
+				CEB733BD25A08EF4003046B5 /* UserRowView.swift */,
 				CE33410925A06029004CE32B /* ContentView.swift */,
 				CE33410B25A0602D004CE32B /* Assets.xcassets */,
 				CE33411025A0602D004CE32B /* LaunchScreen.storyboard */,
@@ -86,6 +98,30 @@
 				CEB733A525A07819003046B5 /* ImageExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CEB733C025A09A26003046B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEB733C125A09A37003046B5 /* UserInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEB733C425A09AAE003046B5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CEB733C525A09AB7003046B5 /* Faking.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CEB733CC25A09F16003046B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEB733C925A09EFD003046B5 /* BlurView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,8 +201,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE33410625A06029004CE32B /* AppDelegate.swift in Sources */,
+				CEB733CA25A09EFD003046B5 /* BlurView.swift in Sources */,
+				CEB733BE25A08EF4003046B5 /* UserRowView.swift in Sources */,
 				CE33410825A06029004CE32B /* SceneDelegate.swift in Sources */,
 				CE33410A25A06029004CE32B /* ContentView.swift in Sources */,
+				CEB733C225A09A37003046B5 /* UserInfo.swift in Sources */,
+				CEB733C625A09AB7003046B5 /* Faking.swift in Sources */,
 				CEB733A625A07819003046B5 /* ImageExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
