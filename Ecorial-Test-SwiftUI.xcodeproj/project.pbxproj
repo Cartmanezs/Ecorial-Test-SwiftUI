@@ -13,6 +13,7 @@
 		CE33410C25A0602D004CE32B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE33410B25A0602D004CE32B /* Assets.xcassets */; };
 		CE33410F25A0602D004CE32B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE33410E25A0602D004CE32B /* Preview Assets.xcassets */; };
 		CE33411225A0602D004CE32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE33411025A0602D004CE32B /* LaunchScreen.storyboard */; };
+		CEB733A625A07819003046B5 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733A525A07819003046B5 /* ImageExtensions.swift */; };
 		CEBD739425A0639C008B8D91 /* SwiftUI-UDF in Frameworks */ = {isa = PBXBuildFile; productRef = CEBD739325A0639C008B8D91 /* SwiftUI-UDF */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		CE33410E25A0602D004CE32B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE33411125A0602D004CE32B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE33411325A0602D004CE32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEB733A525A07819003046B5 /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		CE33410425A06029004CE32B /* Ecorial-Test-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				CEB733A425A07801003046B5 /* Extensions */,
 				CE33410525A06029004CE32B /* AppDelegate.swift */,
 				CE33410725A06029004CE32B /* SceneDelegate.swift */,
 				CE33410925A06029004CE32B /* ContentView.swift */,
@@ -75,6 +78,14 @@
 				CE33410E25A0602D004CE32B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CEB733A425A07801003046B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEB733A525A07819003046B5 /* ImageExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 				CE33410625A06029004CE32B /* AppDelegate.swift in Sources */,
 				CE33410825A06029004CE32B /* SceneDelegate.swift in Sources */,
 				CE33410A25A06029004CE32B /* ContentView.swift in Sources */,
+				CEB733A625A07819003046B5 /* ImageExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
