@@ -18,6 +18,10 @@ struct AddUserContainer: Container {
             title: Binding(
                 get: {""},// { state.addExpenseForm.title },
                 set: { store.dispatch(AnyAction.UpdateUserTitle(text: $0)) }
+            ),
+            date: Binding(
+                get: { state.usersForm.date },
+                set: { store.dispatch(AnyAction.UpdateExpenseDate(date: $0)) }
             )
         )
     }

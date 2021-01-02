@@ -20,5 +20,9 @@ extension AnyAction {
     struct UpdateUserTitle: AppActionable {
         let text: String
     }
+    
+    struct UpdateExpenseDate: AppActionable {
+        let date: Date
+    }
 }
    
