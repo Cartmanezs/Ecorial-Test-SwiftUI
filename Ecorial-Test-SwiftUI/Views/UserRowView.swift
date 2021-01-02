@@ -29,7 +29,7 @@ extension UserRowView {
                 .offset(y: 100)
             userBio
                 .offset(y: 45)
-                .padding(.leading, -80)
+                .padding(.leading, -50)
         }
     }
     

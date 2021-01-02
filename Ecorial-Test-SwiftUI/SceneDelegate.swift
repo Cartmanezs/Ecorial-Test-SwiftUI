@@ -12,6 +12,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    let store = AppStore(initial: AppState()) { state, action in
+        print("Reduce\t\t\t", action)
+        state.reduce(action)
+//        print("State: \t", state)
+//        print("================================================================================================================================")
+    }
+    private lazy var environmentStore = AppEnvironmentStore(store: store)
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.

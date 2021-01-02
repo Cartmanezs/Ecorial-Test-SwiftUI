@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		CE07E39A25A0C62300D8207E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07E39925A0C62300D8207E /* Color.swift */; };
+		CE07E3A025A0CABB00D8207E /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07E39F25A0CABB00D8207E /* Types.swift */; };
+		CE07E3A625A0CB1E00D8207E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07E3A525A0CB1E00D8207E /* AppState.swift */; };
+		CE07E3AB25A0CB7600D8207E /* AllUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07E3AA25A0CB7600D8207E /* AllUsers.swift */; };
+		CE07E3AE25A0CBB900D8207E /* UsersFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07E3AD25A0CBB900D8207E /* UsersFlow.swift */; };
+		CE07E3B125A0CBE300D8207E /* UsersForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07E3B025A0CBE300D8207E /* UsersForm.swift */; };
+		CE07E3B425A0CC1100D8207E /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07E3B325A0CC1100D8207E /* AppAction.swift */; };
 		CE33410625A06029004CE32B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33410525A06029004CE32B /* AppDelegate.swift */; };
 		CE33410825A06029004CE32B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33410725A06029004CE32B /* SceneDelegate.swift */; };
 		CE33410A25A06029004CE32B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33410925A06029004CE32B /* ContentView.swift */; };
@@ -26,6 +32,12 @@
 
 /* Begin PBXFileReference section */
 		CE07E39925A0C62300D8207E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CE07E39F25A0CABB00D8207E /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		CE07E3A525A0CB1E00D8207E /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		CE07E3AA25A0CB7600D8207E /* AllUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsers.swift; sourceTree = "<group>"; };
+		CE07E3AD25A0CBB900D8207E /* UsersFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersFlow.swift; sourceTree = "<group>"; };
+		CE07E3B025A0CBE300D8207E /* UsersForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersForm.swift; sourceTree = "<group>"; };
+		CE07E3B325A0CC1100D8207E /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		CE33410225A06029004CE32B /* Ecorial-Test-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ecorial-Test-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE33410525A06029004CE32B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE33410725A06029004CE32B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +67,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE07E39E25A0CAAA00D8207E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CE07E39F25A0CABB00D8207E /* Types.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CE07E3A225A0CAE800D8207E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CE07E3A325A0CAFE00D8207E /* UDF */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CE07E3A325A0CAFE00D8207E /* UDF */ = {
+			isa = PBXGroup;
+			children = (
+				CE07E3A925A0CB5E00D8207E /* Storage */,
+				CE07E3A425A0CB1100D8207E /* State */,
+				CE07E3B325A0CC1100D8207E /* AppAction.swift */,
+			);
+			path = UDF;
+			sourceTree = "<group>";
+		};
+		CE07E3A425A0CB1100D8207E /* State */ = {
+			isa = PBXGroup;
+			children = (
+				CE07E3A525A0CB1E00D8207E /* AppState.swift */,
+				CE07E3B025A0CBE300D8207E /* UsersForm.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		CE07E3A925A0CB5E00D8207E /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				CE07E3AA25A0CB7600D8207E /* AllUsers.swift */,
+				CE07E3AD25A0CBB900D8207E /* UsersFlow.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		CE3340F925A06029004CE32B = {
 			isa = PBXGroup;
 			children = (
@@ -74,13 +130,14 @@
 		CE33410425A06029004CE32B /* Ecorial-Test-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				CE07E3A225A0CAE800D8207E /* Domain */,
+				CE07E39E25A0CAAA00D8207E /* Common */,
 				CEB733CC25A09F16003046B5 /* Views */,
 				CEB733C425A09AAE003046B5 /* Protocols */,
 				CEB733C025A09A26003046B5 /* Models */,
 				CEB733A425A07801003046B5 /* Extensions */,
 				CE33410525A06029004CE32B /* AppDelegate.swift */,
 				CE33410725A06029004CE32B /* SceneDelegate.swift */,
-				CEB733BD25A08EF4003046B5 /* UserRowView.swift */,
 				CE33410925A06029004CE32B /* ContentView.swift */,
 				CE33410B25A0602D004CE32B /* Assets.xcassets */,
 				CE33411025A0602D004CE32B /* LaunchScreen.storyboard */,
@@ -127,6 +184,7 @@
 		CEB733CC25A09F16003046B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEB733BD25A08EF4003046B5 /* UserRowView.swift */,
 				CEB733C925A09EFD003046B5 /* BlurView.swift */,
 				CE53278725A0B9E000179866 /* RoundedCorner.swift */,
 			);
@@ -212,12 +270,18 @@
 				CE53278525A0AE7B00179866 /* DateFormatter.swift in Sources */,
 				CE33410625A06029004CE32B /* AppDelegate.swift in Sources */,
 				CE53278825A0B9E000179866 /* RoundedCorner.swift in Sources */,
+				CE07E3A025A0CABB00D8207E /* Types.swift in Sources */,
 				CEB733CA25A09EFD003046B5 /* BlurView.swift in Sources */,
+				CE07E3AE25A0CBB900D8207E /* UsersFlow.swift in Sources */,
 				CE07E39A25A0C62300D8207E /* Color.swift in Sources */,
 				CEB733BE25A08EF4003046B5 /* UserRowView.swift in Sources */,
 				CE33410825A06029004CE32B /* SceneDelegate.swift in Sources */,
 				CE33410A25A06029004CE32B /* ContentView.swift in Sources */,
 				CEB733C225A09A37003046B5 /* UserInfo.swift in Sources */,
+				CE07E3B125A0CBE300D8207E /* UsersForm.swift in Sources */,
+				CE07E3A625A0CB1E00D8207E /* AppState.swift in Sources */,
+				CE07E3B425A0CC1100D8207E /* AppAction.swift in Sources */,
+				CE07E3AB25A0CB7600D8207E /* AllUsers.swift in Sources */,
 				CEB733C625A09AB7003046B5 /* Faking.swift in Sources */,
 				CEB733A625A07819003046B5 /* ImageExtensions.swift in Sources */,
 			);
