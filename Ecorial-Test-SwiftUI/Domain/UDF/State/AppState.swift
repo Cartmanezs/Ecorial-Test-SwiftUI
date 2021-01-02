@@ -10,14 +10,14 @@ import SwiftUI_UDF
 
 struct AppState: Reducible {
     
-    var allProjects = AllUsers()
-    var projectsFlow = UsersFlow()
-    var projectsForm = UsersForm()
+    var allUsers = AllUsers()
+    var usersFlow = UsersFlow()
+    var usersForm = UsersForm()
     
     mutating func reduce(_ action: AnyAction) {
-        allProjects.reduce(action)
-        projectsFlow.reduce(action)
-        projectsForm.reduce(action)
+        allUsers.reduce(action)
+        usersFlow.reduce(action)
+        usersForm.reduce(action)
     }
     
     
