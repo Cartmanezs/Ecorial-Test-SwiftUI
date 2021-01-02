@@ -9,24 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isUserSettings: Bool = true
-
-
+    
     var body: some View {
         VStack {
             headerView
             if self.isUserSettings {
                 Text("54")
-                    .padding(.top, 20)
             } else {
                 Text("")
             }
+            Spacer()
         }
+        .padding(.top, 15)
     }
 }
 
 extension ContentView {
     var headerView: some View {
-        VStack(alignment: .center) {
+        VStack {
             HStack(spacing: 22) {
                 Spacer()
                 Text("My Memorials")
@@ -34,26 +34,30 @@ extension ContentView {
                 Button(action: {}) {
                     Image.addIcon
                 }
-                .padding(.trailing, 10)
+                .padding(.trailing, 20)
             }
-            .padding(.leading, 50)
+            .padding(.leading, 60)
+            
+            segmentedControl
+                .frame(width: 242, height: 43)
+                .background(
+                    RoundedCorner(radius: 14, corners: [.allCorners])
+                        .fill(Color.white)
+                        .shadow(color: Color.black.opacity(0.2), radius: 0.9)
+                )
         }
     }
     
-    
     var segmentedControl: some View {
-
+        
         GeometryReader  { proxy in
             ZStack(alignment: isUserSettings ? .leading : .trailing) {
-                Color.gray
-                LinearGradient(
-                    gradient: Gradient(
-                        colors: [.red, .white]),
-                    startPoint: .leading,
-                    endPoint: .trailing
-                )
-                .frame(width: proxy.size.width / 2, height: proxy.size.height - 4)
-                .cornerRadius(13)
+                Color.white
+                Color.segmentedGray
+                    .frame(width: proxy.size.width / 2, height: proxy.size.height - 5)
+                    .cornerRadius(14)
+                    .padding(.leading, 2)
+                    .padding(.trailing, 2)
                 
                 HStack{
                     Button(action: {
@@ -63,7 +67,7 @@ extension ContentView {
                     }) {
                         Text("Created")
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .foregroundColor(isUserSettings ? .white : .gray)
+                            .foregroundColor(isUserSettings ? .white : .segmentedGray)
                     }
                     
                     Button(action: {
@@ -71,9 +75,9 @@ extension ContentView {
                             self.isUserSettings = false
                         }
                     }) {
-                        Text("Favourite")
+                        Text("Favorite")
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .foregroundColor(isUserSettings ? .gray : .white)
+                            .foregroundColor(isUserSettings ? .segmentedGray : .white)
                     }
                 }
             }
@@ -81,6 +85,7 @@ extension ContentView {
         .cornerRadius(13)
     }
 }
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

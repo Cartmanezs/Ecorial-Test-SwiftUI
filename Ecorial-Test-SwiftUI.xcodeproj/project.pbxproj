@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE07E39A25A0C62300D8207E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07E39925A0C62300D8207E /* Color.swift */; };
 		CE33410625A06029004CE32B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33410525A06029004CE32B /* AppDelegate.swift */; };
 		CE33410825A06029004CE32B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33410725A06029004CE32B /* SceneDelegate.swift */; };
 		CE33410A25A06029004CE32B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33410925A06029004CE32B /* ContentView.swift */; };
@@ -14,6 +15,7 @@
 		CE33410F25A0602D004CE32B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE33410E25A0602D004CE32B /* Preview Assets.xcassets */; };
 		CE33411225A0602D004CE32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE33411025A0602D004CE32B /* LaunchScreen.storyboard */; };
 		CE53278525A0AE7B00179866 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53278425A0AE7B00179866 /* DateFormatter.swift */; };
+		CE53278825A0B9E000179866 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53278725A0B9E000179866 /* RoundedCorner.swift */; };
 		CEB733A625A07819003046B5 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733A525A07819003046B5 /* ImageExtensions.swift */; };
 		CEB733BE25A08EF4003046B5 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733BD25A08EF4003046B5 /* UserRowView.swift */; };
 		CEB733C225A09A37003046B5 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733C125A09A37003046B5 /* UserInfo.swift */; };
@@ -23,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE07E39925A0C62300D8207E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		CE33410225A06029004CE32B /* Ecorial-Test-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ecorial-Test-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE33410525A06029004CE32B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE33410725A06029004CE32B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		CE33411125A0602D004CE32B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE33411325A0602D004CE32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE53278425A0AE7B00179866 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		CE53278725A0B9E000179866 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		CEB733A525A07819003046B5 /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		CEB733BD25A08EF4003046B5 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
 		CEB733C125A09A37003046B5 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 			children = (
 				CEB733A525A07819003046B5 /* ImageExtensions.swift */,
 				CE53278425A0AE7B00179866 /* DateFormatter.swift */,
+				CE07E39925A0C62300D8207E /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB733C925A09EFD003046B5 /* BlurView.swift */,
+				CE53278725A0B9E000179866 /* RoundedCorner.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,7 +211,9 @@
 			files = (
 				CE53278525A0AE7B00179866 /* DateFormatter.swift in Sources */,
 				CE33410625A06029004CE32B /* AppDelegate.swift in Sources */,
+				CE53278825A0B9E000179866 /* RoundedCorner.swift in Sources */,
 				CEB733CA25A09EFD003046B5 /* BlurView.swift in Sources */,
+				CE07E39A25A0C62300D8207E /* Color.swift in Sources */,
 				CEB733BE25A08EF4003046B5 /* UserRowView.swift in Sources */,
 				CE33410825A06029004CE32B /* SceneDelegate.swift in Sources */,
 				CE33410A25A06029004CE32B /* ContentView.swift in Sources */,
