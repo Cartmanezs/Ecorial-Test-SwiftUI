@@ -19,9 +19,13 @@ struct AddUserContainer: Container {
                 get: {""},// { state.addExpenseForm.title },
                 set: { store.dispatch(AnyAction.UpdateUserTitle(text: $0)) }
             ),
-            date: Binding(
-                get: { state.usersForm.date },
-                set: { store.dispatch(AnyAction.UpdateExpenseDate(date: $0)) }
+            dateStart: Binding(
+                get: { state.usersForm.dateStart },
+                set: { store.dispatch(AnyAction.UpdateDateStart(date: $0)) }
+            ),
+            dateEnd: Binding(
+                get: { state.usersForm.dateEnd },
+                set: { store.dispatch(AnyAction.UpdateDateEnd(date: $0)) }
             ),
             addUserAction:  { addUserAction(store: store) },
             buttonTitle: "Add memorial"

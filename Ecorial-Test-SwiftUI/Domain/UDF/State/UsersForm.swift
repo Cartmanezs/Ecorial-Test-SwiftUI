@@ -11,7 +11,8 @@ import SwiftUI_UDF
 struct UsersForm: Reducible {
     var selectedUser: UserInfo.Id = .init(value: "")
     var isNavigateToDetails: Bool = false
-    var date: Date = Date()
+    var dateStart: Date = Date()
+    var dateEnd: Date = Date()
     
     mutating func reduce(_ action: AnyAction) {
         switch action.value {
@@ -19,9 +20,10 @@ struct UsersForm: Reducible {
             selectedUser = action.user
         case let action as AnyAction.SetUserDetailsNavigation:
             isNavigateToDetails = action.isPresented
-            
-        case let action as AnyAction.UpdateExpenseDate:
-            date = action.date
+        case let action as AnyAction.UpdateDateStart:
+            dateStart = action.date
+        case let action as AnyAction.UpdateDateEnd:
+            dateEnd = action.date
         default:
             break
         }

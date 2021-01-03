@@ -33,7 +33,7 @@ extension UserRowView {
                 .offset(y: 100)
             userBio
                 .offset(y: 45)
-                .padding(.leading, -50)
+                .padding(.leading, -10)
         }
     }
     
@@ -56,9 +56,12 @@ extension UserRowView {
                     Text(user.description)
                         .font(.subheadline)
                         .foregroundColor(.white)
-                    Text(DateFormatter.full.string(from: user.date))
-                        .font(.system(size: 12))
-                        .foregroundColor(.gray)
+                    HStack(spacing: 0) {
+                        Text("\(DateFormatter.full.string(from: user.dateStart)) to ")
+                        Text(DateFormatter.full.string(from: user.dateEnd))
+                    }
+                    .foregroundColor(.gray)
+                    .font(.system(size: 11))
                 }
             }
         }

@@ -11,7 +11,8 @@ import SwiftUI_UDF
 struct AddUserComponent: Component {
     struct Props {
         var title: Binding<String>
-        var date: Binding<Date>
+        var dateStart: Binding<Date>
+        var dateEnd: Binding<Date>
         var addUserAction: Command
         var buttonTitle: String
     }
@@ -59,7 +60,7 @@ extension AddUserComponent {
                     .foregroundColor(.gray)
                 DatePicker(
                     "Starting",
-                    selection: props.date,
+                    selection: props.dateStart,
                     displayedComponents: .date
                 )
             }
@@ -69,7 +70,7 @@ extension AddUserComponent {
                     .foregroundColor(.gray)
                 DatePicker(
                     "Ending",
-                    selection: props.date,
+                    selection: props.dateEnd,
                     displayedComponents: .date
                 )
             }
@@ -84,7 +85,8 @@ struct AddUserComponent_Previews: PreviewProvider {
         AddUserComponent(props:
             .init(
                 title: .constant(""),
-                date: .constant(Date()),
+                dateStart: .constant(Date()),
+                dateEnd: .constant(Date()),
                 addUserAction: {},
                 buttonTitle: "Create memorial"
             )

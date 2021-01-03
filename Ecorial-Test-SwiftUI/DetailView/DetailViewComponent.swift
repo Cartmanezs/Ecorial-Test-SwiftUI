@@ -71,14 +71,17 @@ extension DetailViewComponent {
                         .font(.system(size: 36))
                     Text(props.user.description)
                         .font(.system(size: 17))
-                    Text(DateFormatter.full.string(from: props.user.date))
-                        .font(.system(size: 17))
+                    HStack(spacing: 0) {
+                        Text("\(DateFormatter.full.string(from: props.user.dateStart)) to ")
+                        Text(DateFormatter.full.string(from: props.user.dateEnd))
+                    }
+                    .font(.system(size: 11))
                 }
                 .foregroundColor(.white)
             }
         }
         .padding(.bottom, 30)
-        .padding(.leading, -80)
+        .padding(.leading, -60)
     }
     
     var buttons: some View {

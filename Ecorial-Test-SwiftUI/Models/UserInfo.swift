@@ -14,7 +14,8 @@ struct UserInfo: Hashable, Identifiable {
     var id: Id
     let name: String
     let description: String
-    let date: Date
+    let dateStart: Date
+    let dateEnd: Date
     let image: String
     let userPhoto: String
     let userStatus: UserStatus
@@ -33,7 +34,8 @@ extension UserInfo: Faking {
         id = .init(value: UUID().uuidString)
         name = "Steve Rogers"
         description = "Soldier, philanthropist, real hero"
-        date = Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date()
+        dateStart = Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date()
+        dateEnd = Calendar.current.date(byAdding: .month, value: 3, to: Date()) ?? Date()
         image = "background"
         userPhoto = "userPhoto"
         userStatus = Int.random(in: 0...1) == 0 ? .none : .favorite
