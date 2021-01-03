@@ -13,6 +13,7 @@ func LocalizedString(_ key: String) -> String {
 
 struct Localizations {
     var addUser: AddUser{ AddUser() }
+    var common: Common{ Common() }
 }
 
 extension Localizations {
@@ -24,5 +25,9 @@ extension Localizations {
         var startDate: String { LocalizedString("addUser_start_date") }
         var endDate: String { LocalizedString("addUser_end_date") }
         var buttonTitle: String { LocalizedString("addUser_button_title") }
+    }
+    
+    struct Common {
+        var restingPlaces: String { LocalizedString("addUser_resting_places") }
     }
 }

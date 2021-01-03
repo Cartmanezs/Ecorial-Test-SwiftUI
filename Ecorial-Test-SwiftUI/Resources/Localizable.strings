@@ -5,6 +5,7 @@
   Created by Ingvar on 03.01.2021.
   
 */
+
 //AddUser
 "addUser_title" = "Create Memorial";
 "addUser_persons_name" = "Person’s name";
@@ -13,3 +14,6 @@
 "addUser_start_date" = "Starting Date";
 "addUser_end_date" = "Ening Date";
 "addUser_button_title" = "Add memorial";
+
+//Common
+"addUser_resting_places" = "Resting Places";

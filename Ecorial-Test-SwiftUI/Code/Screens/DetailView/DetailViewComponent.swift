@@ -123,7 +123,7 @@ extension DetailViewComponent {
                     alignment: .center
                 )
             VStack(alignment: .leading, spacing: 30) {
-                Text("Resting Places")
+                Text(String.localized().common.restingPlaces)
                     .font(.system(size: 20))
                     .padding(.top, 5)
                     .padding(.horizontal, 40)
