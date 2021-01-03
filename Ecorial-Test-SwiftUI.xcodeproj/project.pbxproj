@@ -24,6 +24,7 @@
 		CE33411225A0602D004CE32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE33411025A0602D004CE32B /* LaunchScreen.storyboard */; };
 		CE53278525A0AE7B00179866 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53278425A0AE7B00179866 /* DateFormatter.swift */; };
 		CE53278825A0B9E000179866 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53278725A0B9E000179866 /* RoundedCorner.swift */; };
+		CEB4DA1F25A2096000918253 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4DA1E25A2096000918253 /* NavigationBar.swift */; };
 		CEB733A625A07819003046B5 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733A525A07819003046B5 /* ImageExtensions.swift */; };
 		CEB733BE25A08EF4003046B5 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733BD25A08EF4003046B5 /* UserRowView.swift */; };
 		CEB733C225A09A37003046B5 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB733C125A09A37003046B5 /* UserInfo.swift */; };
@@ -59,6 +60,7 @@
 		CE33411325A0602D004CE32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE53278425A0AE7B00179866 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		CE53278725A0B9E000179866 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		CEB4DA1E25A2096000918253 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		CEB733A525A07819003046B5 /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		CEB733BD25A08EF4003046B5 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
 		CEB733C125A09A37003046B5 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				CE53278425A0AE7B00179866 /* DateFormatter.swift */,
 				CE07E39925A0C62300D8207E /* Color.swift */,
 				CEFDC0DC25A0E069004B23BE /* Binding.swift */,
+				CEB4DA1E25A2096000918253 /* NavigationBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				CE33410825A06029004CE32B /* SceneDelegate.swift in Sources */,
 				CE33410A25A06029004CE32B /* ContentView.swift in Sources */,
 				CEFDC0E025A1C26C004B23BE /* MemorialButtonStyle.swift in Sources */,
+				CEB4DA1F25A2096000918253 /* NavigationBar.swift in Sources */,
 				CEB733C225A09A37003046B5 /* UserInfo.swift in Sources */,
 				CE07E3B125A0CBE300D8207E /* UsersForm.swift in Sources */,
 				CE07E3A625A0CB1E00D8207E /* AppState.swift in Sources */,

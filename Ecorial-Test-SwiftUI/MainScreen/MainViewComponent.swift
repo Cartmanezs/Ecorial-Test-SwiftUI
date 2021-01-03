@@ -15,35 +15,27 @@ struct MainViewComponent<AddUser: Container, DetailView: Container>: Component {
         var userById: (UserInfo.Id) -> UserInfo
         var addUser: AddUser
         var userContainer:(UserInfo) -> DetailView
-        var userAction: CommandWith<UserInfo>
-
     }
     
-    @State private var isUserSettings: Bool = true
+    @State private var isMainViewPresented: Bool = true
     @State private var isAddUserPresented = false
     @State private var userToDetails: UserInfo? = nil
-    @State private var isUserDetailsPresented = false
+    
     var props: Props
 
     var body: some View {
-        
-        ZStack {
-            Text("")
-                //.sheetContainer(isPresented: $isUserDetailsPresented, container: self.props.userContainer(userToDetails ?? UserInfo.fakeItem()))
-                .fullScreenCover(isPresented: $isUserDetailsPresented, content: {
-                    DetailViewContainer(userId: userToDetails!.id)
-                }
-                )
-            VStack {
-                headerView
-                usersView
-            }
-            .padding(.top, 15)
-            
+        NavigationView {
             ZStack {
-                Spacer()
-
-            }.background(Color.clear).edgesIgnoringSafeArea(.all).offset(x: 0, y: self.isUserDetailsPresented ? 0 : UIApplication.shared.keyWindow?.frame.height ?? 0)
+                NavigationLinkItem(
+                    item: self.$userToDetails,
+                    destination: props.userContainer
+                )
+                VStack {
+                    headerView
+                    usersView
+                }
+            }
+            .hideNavigationBar()
         }
     }
 }
@@ -62,6 +54,7 @@ extension MainViewComponent {
                 .padding(.trailing, 20)
             }
             .padding(.leading, 60)
+            .padding(.top, 20)
             
             segmentedControl
                 .frame(width: 242, height: 43)
@@ -75,7 +68,7 @@ extension MainViewComponent {
     
     var usersView: some View {
         ScrollView {
-            if self.isUserSettings {
+            if self.isMainViewPresented {
                 usersList
                     .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
             } else {
@@ -88,7 +81,7 @@ extension MainViewComponent {
     var segmentedControl: some View {
         
         GeometryReader  { proxy in
-            ZStack(alignment: isUserSettings ? .leading : .trailing) {
+            ZStack(alignment: isMainViewPresented ? .leading : .trailing) {
                 Color.white
                 Color.segmentedGray
                     .frame(width: proxy.size.width / 2, height: proxy.size.height - 5)
@@ -99,22 +92,22 @@ extension MainViewComponent {
                 HStack{
                     Button(action: {
                         withAnimation(.easeInOut(duration: 0.5)) {
-                            self.isUserSettings = true
+                            self.isMainViewPresented = true
                         }
                     }) {
                         Text("Created")
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .foregroundColor(isUserSettings ? .white : .segmentedGray)
+                            .foregroundColor(isMainViewPresented ? .white : .segmentedGray)
                     }
                     
                     Button(action: {
                         withAnimation(.easeInOut(duration: 0.5)) {
-                            self.isUserSettings = false
+                            self.isMainViewPresented = false
                         }
                     }) {
                         Text("Favorite")
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .foregroundColor(isUserSettings ? .segmentedGray : .white)
+                            .foregroundColor(isMainViewPresented ? .segmentedGray : .white)
                     }
                 }
             }
@@ -128,14 +121,9 @@ extension MainViewComponent {
                 UserRowView(user: user)
                     .onTapGesture {
                         withAnimation {
-                        isUserDetailsPresented = true
-                       // self.props.userAction(user)
-                        print("work")
-                        self.userToDetails = user
+                            self.userToDetails = user
                         }
- 
-//                        self.projectAction(project)
-                   }
+                }
             }
         }
     }
@@ -155,8 +143,7 @@ struct MainViewComponent_Previews: PreviewProvider {
                 users: [],
                 userById:  {_ in UserInfo.fakeItem()},
                 addUser: RenderContainer(viewToRender: AddUserComponent_Previews.previews),
-                userContainer: {_ in RenderContainer(viewToRender: DetailViewComponent_Previews.previews)},
-                userAction: { _ in }
+                userContainer: {_ in RenderContainer(viewToRender: DetailViewComponent_Previews.previews)}
             )
         )
     }

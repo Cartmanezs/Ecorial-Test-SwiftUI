@@ -39,8 +39,8 @@ struct DetailViewComponent: Component {
                     .padding(.trailing, 10)
                     .shadow(color: Color.gray, radius: 4, x: 0, y: 2)
                 }
-                .padding(.top, 10)
-                .padding(.horizontal, 20)
+                .padding(.top, 20)
+                .padding(.horizontal, 10)
                 
                 Spacer()
                 
@@ -48,6 +48,7 @@ struct DetailViewComponent: Component {
                 buttons
             }
         }
+        .hideNavigationBar()
     }
 }
 
@@ -58,9 +59,9 @@ extension DetailViewComponent {
                 .resizable()
                 .aspectFill()
                 .frame(width: 174, height: 174)
-                .clipShape( RoundedRectangle(cornerRadius: 22))
+                .clipShape( RoundedRectangle(cornerRadius: 40))
                 .overlay(
-                    RoundedRectangle(cornerRadius: 22)
+                    RoundedRectangle(cornerRadius: 40)
                         .stroke(Color.white, lineWidth: 3)
                 )
             

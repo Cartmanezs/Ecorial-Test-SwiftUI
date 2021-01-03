@@ -26,9 +26,5 @@ extension AnyAction {
     }
     
     struct AddUser: AppActionable {}
-    
-    struct OpenUserDetails: AppActionable {
-        let user: UserInfo
-    }
 }
    
