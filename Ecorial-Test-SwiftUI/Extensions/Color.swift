@@ -10,4 +10,5 @@ import SwiftUI
 // MARK:  Colors
 extension Color {
     static let segmentedGray: Color = .init("segGray")
+    static let ecoBlue: Color = .init("ecoBlue")
 }

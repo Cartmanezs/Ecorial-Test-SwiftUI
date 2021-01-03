@@ -12,6 +12,8 @@ struct AddUserComponent: Component {
     struct Props {
         var title: Binding<String>
         var date: Binding<Date>
+        var addUserAction: Command
+        var buttonTitle: String
     }
     
     var props: Props
@@ -19,9 +21,9 @@ struct AddUserComponent: Component {
     var body: some View {
         VStack(spacing: 10) {
             Text("Create Memorial")
-                .font(.headline)
-
-            VStack(alignment: .leading, spacing: 10) {
+                .font(.title)
+                .padding(.bottom, 30)
+            VStack(alignment: .leading, spacing: 15) {
                 Text("Person’s name")
                     .font(.headline)
                 Text("Each memorial is dedicated to a person. Input the full name in the field below.")
@@ -31,26 +33,22 @@ struct AddUserComponent: Component {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.bottom, 5)
                 DatePicker(
-                    "String.localized().common.date",
+                    "date",
                     selection: props.date,
                     displayedComponents: .date
                 )
-//                TextFieldNumeric(String.localized().common.enterAnAmount, value: 54)//props.amount)
-//                    .textFieldStyle(UnderlinedTextFieldStyle())
-//                    .font(.sfProDisplaySemibold(size: 16))
-//                    .padding(.bottom, 5)
-                
-//                DatePicker(
-//                    String.localized().common.date,
-//                    selection: props.date,
-//                    displayedComponents: .date
-//                )
-//                .accentColor(.ctrlGray)
             }
-           // .font(.sfProDisplaySemibold(size: 11))
-            //.foregroundColor(.ctrlPlaceholderGray)
+            .padding(.bottom, 40)
+            
+            Button(action: props.addUserAction) {
+                Text(props.buttonTitle)
+            }
+            .frame(width: 157, height: 43)
+            .buttonStyle(MemorialButtonStyle())
+            
+            Spacer()
         }
-        .padding(.top, 10)
+        .padding(.top, 20)
         .padding(.horizontal, 25)
     }
 }
@@ -60,7 +58,9 @@ struct AddUserComponent_Previews: PreviewProvider {
         AddUserComponent(props:
             .init(
                 title: .constant(""),
-                date: .constant(Date())
+                date: .constant(Date()),
+                addUserAction: {},
+                buttonTitle: "Create memorial"
             )
         )
     }

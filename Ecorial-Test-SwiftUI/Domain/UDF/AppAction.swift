@@ -24,5 +24,7 @@ extension AnyAction {
     struct UpdateExpenseDate: AppActionable {
         let date: Date
     }
+    
+    struct AddUser: AppActionable {}
 }
    

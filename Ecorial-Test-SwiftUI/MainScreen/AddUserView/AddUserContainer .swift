@@ -22,10 +22,19 @@ struct AddUserContainer: Container {
             date: Binding(
                 get: { state.usersForm.date },
                 set: { store.dispatch(AnyAction.UpdateExpenseDate(date: $0)) }
-            )
+            ),
+            addUserAction:  { addUserAction(store: store) },
+            buttonTitle: "Add memorial"
         )
     }
     func onContainerAppear(store: EnvironmentStore<AppState>) {
 
+    }
+}
+
+private extension AddUserContainer {
+    func addUserAction(store: AppEnvironmentStore) {
+        store.dispatch(AnyAction.AddUser())
+        presentationMode.wrappedValue.dismiss()
     }
 }

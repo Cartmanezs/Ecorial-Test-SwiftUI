@@ -33,6 +33,7 @@
 		CEFDC0D725A0DDCE004B23BE /* AddUserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC0D625A0DDCE004B23BE /* AddUserComponent.swift */; };
 		CEFDC0DA25A0DE66004B23BE /* AddUserContainer .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC0D925A0DE66004B23BE /* AddUserContainer .swift */; };
 		CEFDC0DD25A0E069004B23BE /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC0DC25A0E069004B23BE /* Binding.swift */; };
+		CEFDC0E025A1C26C004B23BE /* MemorialButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC0DF25A1C26C004B23BE /* MemorialButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		CEFDC0D625A0DDCE004B23BE /* AddUserComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserComponent.swift; sourceTree = "<group>"; };
 		CEFDC0D925A0DE66004B23BE /* AddUserContainer .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddUserContainer .swift"; sourceTree = "<group>"; };
 		CEFDC0DC25A0E069004B23BE /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		CEFDC0DF25A1C26C004B23BE /* MemorialButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorialButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				CEB733BD25A08EF4003046B5 /* UserRowView.swift */,
 				CEB733C925A09EFD003046B5 /* BlurView.swift */,
 				CE53278725A0B9E000179866 /* RoundedCorner.swift */,
+				CEFDC0DF25A1C26C004B23BE /* MemorialButtonStyle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				CEB733BE25A08EF4003046B5 /* UserRowView.swift in Sources */,
 				CE33410825A06029004CE32B /* SceneDelegate.swift in Sources */,
 				CE33410A25A06029004CE32B /* ContentView.swift in Sources */,
+				CEFDC0E025A1C26C004B23BE /* MemorialButtonStyle.swift in Sources */,
 				CEB733C225A09A37003046B5 /* UserInfo.swift in Sources */,
 				CE07E3B125A0CBE300D8207E /* UsersForm.swift in Sources */,
 				CE07E3A625A0CB1E00D8207E /* AppState.swift in Sources */,
