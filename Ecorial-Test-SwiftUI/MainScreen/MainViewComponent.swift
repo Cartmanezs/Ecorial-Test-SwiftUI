@@ -15,34 +15,33 @@ struct MainViewComponent<AddUser: Container, DetailView: Container>: Component {
         var userById: (UserInfo.Id) -> UserInfo
         var addUser: AddUser
         var userContainer:(UserInfo) -> DetailView
-     //   var userAction: CommandWith<UserInfo>
+        var userAction: CommandWith<UserInfo>
 
     }
     
     @State private var isUserSettings: Bool = true
     @State private var isAddUserPresented = false
     @State private var userToDetails: UserInfo? = nil
-
+    @State private var isUserDetailsPresented = false
     var props: Props
 
     var body: some View {
         
         ZStack {
+         //   Text("").sheetContainer(isPresented: $isUserDetailsPresented, container: self.props.userContainer(userToDetails ?? UserInfo.fakeItem()))
+
+//            NavigationLink(
+//                destination: props.userContainer(userToDetails ?? UserInfo.fakeItem())
+//            ) {
+//                Text("1")
+//            }
             NavigationLinkItem(
                 item: self.$userToDetails,
                 destination: props.userContainer
             )
             VStack {
                 headerView
-                ScrollView {
-                    if self.isUserSettings {
-                        usersList
-                            .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
-                    } else {
-                        Text("2")
-                            .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
-                    }
-                }
+                usersView
             }
             .padding(.top, 15)
         }
@@ -71,6 +70,18 @@ extension MainViewComponent {
                         .fill(Color.white)
                         .shadow(color: Color.black.opacity(0.2), radius: 0.9)
                 )
+        }
+    }
+    
+    var usersView: some View {
+        ScrollView {
+            if self.isUserSettings {
+                usersList
+                    .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+            } else {
+                Text("2")
+                    .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
+            }
         }
     }
     
@@ -116,8 +127,10 @@ extension MainViewComponent {
             ForEach(users, id: \.self) { user in
                 UserRowView(user: user)
                     .onTapGesture {
-                    //    props.userAction(user)
-                     self.userToDetails = user
+                        isUserDetailsPresented = true 
+                        //self.props.userAction(user)
+                        print("work")
+                        self.userToDetails = user
 //                        self.projectAction(project)
                    }
             }
@@ -139,8 +152,8 @@ struct MainViewComponent_Previews: PreviewProvider {
                 users: [],
                 userById:  {_ in UserInfo.fakeItem()},
                 addUser: RenderContainer(viewToRender: AddUserComponent_Previews.previews),
-                userContainer: {_ in RenderContainer(viewToRender: DetailViewComponent_Previews.previews)}
-              //  userAction: { _ in }
+                userContainer: {_ in RenderContainer(viewToRender: DetailViewComponent_Previews.previews)},
+                userAction: { _ in }
             )
         )
     }

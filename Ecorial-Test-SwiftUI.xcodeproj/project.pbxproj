@@ -35,6 +35,8 @@
 		CEFDC0DD25A0E069004B23BE /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC0DC25A0E069004B23BE /* Binding.swift */; };
 		CEFDC0E025A1C26C004B23BE /* MemorialButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC0DF25A1C26C004B23BE /* MemorialButtonStyle.swift */; };
 		CEFDC13525A1D211004B23BE /* SwiftUI-Kit in Frameworks */ = {isa = PBXBuildFile; productRef = CEFDC13425A1D211004B23BE /* SwiftUI-Kit */; };
+		CEFDC13925A1D2B4004B23BE /* DetailViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC13825A1D2B4004B23BE /* DetailViewContainer.swift */; };
+		CEFDC13C25A1D2C6004B23BE /* DetailViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC13B25A1D2C6004B23BE /* DetailViewComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		CEFDC0D925A0DE66004B23BE /* AddUserContainer .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddUserContainer .swift"; sourceTree = "<group>"; };
 		CEFDC0DC25A0E069004B23BE /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		CEFDC0DF25A1C26C004B23BE /* MemorialButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorialButtonStyle.swift; sourceTree = "<group>"; };
+		CEFDC13825A1D2B4004B23BE /* DetailViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewContainer.swift; sourceTree = "<group>"; };
+		CEFDC13B25A1D2C6004B23BE /* DetailViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,8 @@
 				CE33411025A0602D004CE32B /* LaunchScreen.storyboard */,
 				CE33411325A0602D004CE32B /* Info.plist */,
 				CE33410D25A0602D004CE32B /* Preview Content */,
+				CEFDC13825A1D2B4004B23BE /* DetailViewContainer.swift */,
+				CEFDC13B25A1D2C6004B23BE /* DetailViewComponent.swift */,
 			);
 			path = "Ecorial-Test-SwiftUI";
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 				CE33410625A06029004CE32B /* AppDelegate.swift in Sources */,
 				CEFDC0DD25A0E069004B23BE /* Binding.swift in Sources */,
 				CE53278825A0B9E000179866 /* RoundedCorner.swift in Sources */,
+				CEFDC13925A1D2B4004B23BE /* DetailViewContainer.swift in Sources */,
 				CE07E3C125A0CFD100D8207E /* MainViewContainer.swift in Sources */,
 				CE07E3BD25A0CFA100D8207E /* MainViewComponent.swift in Sources */,
 				CE07E3A025A0CABB00D8207E /* Types.swift in Sources */,
@@ -325,6 +332,7 @@
 				CE07E3B125A0CBE300D8207E /* UsersForm.swift in Sources */,
 				CE07E3A625A0CB1E00D8207E /* AppState.swift in Sources */,
 				CE07E3B425A0CC1100D8207E /* AppAction.swift in Sources */,
+				CEFDC13C25A1D2C6004B23BE /* DetailViewComponent.swift in Sources */,
 				CE07E3AB25A0CB7600D8207E /* AllUsers.swift in Sources */,
 				CEB733C625A09AB7003046B5 /* Faking.swift in Sources */,
 				CEB733A625A07819003046B5 /* ImageExtensions.swift in Sources */,
