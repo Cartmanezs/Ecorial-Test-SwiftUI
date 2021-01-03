@@ -24,18 +24,7 @@ struct AddUserComponent: Component {
             Text("Create Memorial")
                 .font(.title)
                 .padding(.bottom, 30)
-            VStack(alignment: .leading, spacing: 15) {
-                Text("Person’s name")
-                    .font(.headline)
-                Text("Each memorial is dedicated to a person. Input the full name in the field below.")
-                    .font(.subheadline)
-                
-                TextField("Full Name", text: props.title)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.bottom, 5)
-            }
-                .padding(.bottom, 10)
-           
+            detailsView
             datePickersView
                 .padding(.bottom, 40)
             Button(action: props.addUserAction) {
@@ -53,6 +42,20 @@ struct AddUserComponent: Component {
 }
 
 extension AddUserComponent {
+    var detailsView: some View {
+        VStack(alignment: .leading, spacing: 15) {
+            Text("Person’s name")
+                .font(.headline)
+            Text("Each memorial is dedicated to a person. Input the full name in the field below.")
+                .font(.subheadline)
+            
+            TextField("Full Name", text: props.title)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(.bottom, 5)
+        }
+            .padding(.bottom, 10)
+    }
+    
     var datePickersView: some View {
         HStack(alignment: .center) {
             VStack {
