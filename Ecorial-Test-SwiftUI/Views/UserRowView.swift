@@ -43,9 +43,9 @@ extension UserRowView {
                 .resizable()
                 .aspectFill()
                 .frame(width: 101, height: 101)
-                .clipShape(  RoundedRectangle(cornerRadius: 22))
+                .clipShape(  RoundedRectangle(cornerRadius: 25))
                 .overlay(
-                    RoundedRectangle(cornerRadius: 22)
+                    RoundedRectangle(cornerRadius: 25)
                         .stroke(Color.white, lineWidth: 2)
                 )
             HStack {

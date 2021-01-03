@@ -167,6 +167,7 @@
 				CEB733C025A09A26003046B5 /* Models */,
 				CEB733A425A07801003046B5 /* Extensions */,
 				CE07E3C325A0D1DD00D8207E /* MainScreen */,
+				CEB4DA2125A20D7800918253 /* DetailView */,
 				CE33410525A06029004CE32B /* AppDelegate.swift */,
 				CE33410725A06029004CE32B /* SceneDelegate.swift */,
 				CE33410925A06029004CE32B /* ContentView.swift */,
@@ -174,8 +175,6 @@
 				CE33411025A0602D004CE32B /* LaunchScreen.storyboard */,
 				CE33411325A0602D004CE32B /* Info.plist */,
 				CE33410D25A0602D004CE32B /* Preview Content */,
-				CEFDC13825A1D2B4004B23BE /* DetailViewContainer.swift */,
-				CEFDC13B25A1D2C6004B23BE /* DetailViewComponent.swift */,
 			);
 			path = "Ecorial-Test-SwiftUI";
 			sourceTree = "<group>";
@@ -186,6 +185,15 @@
 				CE33410E25A0602D004CE32B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CEB4DA2125A20D7800918253 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				CEFDC13825A1D2B4004B23BE /* DetailViewContainer.swift */,
+				CEFDC13B25A1D2C6004B23BE /* DetailViewComponent.swift */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		CEB733A425A07801003046B5 /* Extensions */ = {

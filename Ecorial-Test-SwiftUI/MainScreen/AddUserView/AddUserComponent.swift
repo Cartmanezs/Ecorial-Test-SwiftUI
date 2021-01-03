@@ -32,14 +32,12 @@ struct AddUserComponent: Component {
                 TextField("Full Name", text: props.title)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.bottom, 5)
-                DatePicker(
-                    "date",
-                    selection: props.date,
-                    displayedComponents: .date
-                )
             }
-            .padding(.bottom, 40)
-            
+                .padding(.bottom, 10)
+           
+            datePickersView
+                .padding(.bottom, 40)
+
             Button(action: props.addUserAction) {
                 Text(props.buttonTitle)
             }
@@ -50,6 +48,34 @@ struct AddUserComponent: Component {
         }
         .padding(.top, 20)
         .padding(.horizontal, 25)
+    }
+}
+
+extension AddUserComponent {
+    var datePickersView: some View {
+        HStack(alignment: .center) {
+            VStack {
+                Text("Starting Date")
+                    .foregroundColor(.gray)
+                DatePicker(
+                    "Starting",
+                    selection: props.date,
+                    displayedComponents: .date
+                )
+            }
+            Spacer()
+            VStack {
+                Text("Ending Date")
+                    .foregroundColor(.gray)
+                DatePicker(
+                    "Ending",
+                    selection: props.date,
+                    displayedComponents: .date
+                )
+            }
+        }
+        .labelsHidden()
+
     }
 }
 
