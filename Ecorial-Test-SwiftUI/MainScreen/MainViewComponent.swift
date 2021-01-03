@@ -28,22 +28,22 @@ struct MainViewComponent<AddUser: Container, DetailView: Container>: Component {
     var body: some View {
         
         ZStack {
-            Text("").sheetContainer(isPresented: $isUserDetailsPresented, container: self.props.userContainer(userToDetails ?? UserInfo.fakeItem()))
-
-//            NavigationLink(
-//                destination: props.userContainer(userToDetails ?? UserInfo.fakeItem())
-//            ) {
-//                Text("1")
-//            }
-//            NavigationLinkItem(
-//                item: self.$userToDetails,
-//                destination: props.userContainer
-//            )
+            Text("")
+                //.sheetContainer(isPresented: $isUserDetailsPresented, container: self.props.userContainer(userToDetails ?? UserInfo.fakeItem()))
+                .fullScreenCover(isPresented: $isUserDetailsPresented, content: {
+                    DetailViewContainer(userId: userToDetails!.id)
+                }
+                )
             VStack {
                 headerView
                 usersView
             }
             .padding(.top, 15)
+            
+            ZStack {
+                Spacer()
+
+            }.background(Color.clear).edgesIgnoringSafeArea(.all).offset(x: 0, y: self.isUserDetailsPresented ? 0 : UIApplication.shared.keyWindow?.frame.height ?? 0)
         }
     }
 }
@@ -127,10 +127,12 @@ extension MainViewComponent {
             ForEach(users, id: \.self) { user in
                 UserRowView(user: user)
                     .onTapGesture {
+                        withAnimation {
                         isUserDetailsPresented = true
                        // self.props.userAction(user)
                         print("work")
                         self.userToDetails = user
+                        }
  
 //                        self.projectAction(project)
                    }
