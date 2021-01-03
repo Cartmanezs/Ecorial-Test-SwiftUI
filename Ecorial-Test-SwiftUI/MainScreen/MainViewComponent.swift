@@ -7,33 +7,45 @@
 
 import SwiftUI
 import SwiftUI_UDF
+import SwiftUI_Kit
 
-struct MainViewComponent<AddUser: Container>: Component {
+struct MainViewComponent<AddUser: Container, DetailView: Container>: Component {
     struct Props {
         var users: [UserInfo.Id]
         var userById: (UserInfo.Id) -> UserInfo
         var addUser: AddUser
+        var userContainer:(UserInfo) -> DetailView
+     //   var userAction: CommandWith<UserInfo>
+
     }
     
     @State private var isUserSettings: Bool = true
     @State private var isAddUserPresented = false
+    @State private var userToDetails: UserInfo? = nil
 
     var props: Props
 
     var body: some View {
-        VStack {
-            headerView
-            ScrollView {
-                if self.isUserSettings {
-                    usersList
-                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
-                } else {
-                    Text("2")
-                        .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
+        
+        ZStack {
+            NavigationLinkItem(
+                item: self.$userToDetails,
+                destination: props.userContainer
+            )
+            VStack {
+                headerView
+                ScrollView {
+                    if self.isUserSettings {
+                        usersList
+                            .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+                    } else {
+                        Text("2")
+                            .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
+                    }
                 }
             }
+            .padding(.top, 15)
         }
-        .padding(.top, 15)
     }
 }
 
@@ -103,9 +115,11 @@ extension MainViewComponent {
         VStack(spacing: 5) {
             ForEach(users, id: \.self) { user in
                 UserRowView(user: user)
-//                    .onTapGesture {
+                    .onTapGesture {
+                    //    props.userAction(user)
+                     self.userToDetails = user
 //                        self.projectAction(project)
-//                    }
+                   }
             }
         }
     }
@@ -124,7 +138,9 @@ struct MainViewComponent_Previews: PreviewProvider {
             .init(
                 users: [],
                 userById:  {_ in UserInfo.fakeItem()},
-                addUser: RenderContainer(viewToRender: AddUserComponent_Previews.previews)
+                addUser: RenderContainer(viewToRender: AddUserComponent_Previews.previews),
+                userContainer: {_ in RenderContainer(viewToRender: DetailViewComponent_Previews.previews)}
+              //  userAction: { _ in }
             )
         )
     }

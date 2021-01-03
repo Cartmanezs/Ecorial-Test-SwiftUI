@@ -15,7 +15,8 @@ struct MainViewContainer: Container {
         .init(
             users: Array(state.allUsers.byId.keys).sorted { $0.value > $1.value },
             userById: { state.allUsers.byId[$0]! },
-            addUser: AddUserContainer()
+            addUser: AddUserContainer(),
+            userContainer: { DetailViewContainer(userId: $0.id) }
         )
     }
 

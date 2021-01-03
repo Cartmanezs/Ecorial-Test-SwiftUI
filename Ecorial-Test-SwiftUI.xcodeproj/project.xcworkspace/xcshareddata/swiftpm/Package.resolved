@@ -9,6 +9,15 @@
           "revision": "6406ded25647678224bf7fa72f78006a79796c90",
           "version": "0.1.21"
         }
+      },
+      {
+        "package": "SwiftUI-Kit",
+        "repositoryURL": "https://github.com/Maks-Jago/SwiftUIKit",
+        "state": {
+          "branch": null,
+          "revision": "618253d326443e2377d798364edf7557ff8acad1",
+          "version": "0.1.0"
+        }
       }
     ]
   },

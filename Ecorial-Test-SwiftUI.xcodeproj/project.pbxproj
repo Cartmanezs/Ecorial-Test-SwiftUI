@@ -34,6 +34,7 @@
 		CEFDC0DA25A0DE66004B23BE /* AddUserContainer .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC0D925A0DE66004B23BE /* AddUserContainer .swift */; };
 		CEFDC0DD25A0E069004B23BE /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC0DC25A0E069004B23BE /* Binding.swift */; };
 		CEFDC0E025A1C26C004B23BE /* MemorialButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDC0DF25A1C26C004B23BE /* MemorialButtonStyle.swift */; };
+		CEFDC13525A1D211004B23BE /* SwiftUI-Kit in Frameworks */ = {isa = PBXBuildFile; productRef = CEFDC13425A1D211004B23BE /* SwiftUI-Kit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEBD739425A0639C008B8D91 /* SwiftUI-UDF in Frameworks */,
+				CEFDC13525A1D211004B23BE /* SwiftUI-Kit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +245,7 @@
 			name = "Ecorial-Test-SwiftUI";
 			packageProductDependencies = (
 				CEBD739325A0639C008B8D91 /* SwiftUI-UDF */,
+				CEFDC13425A1D211004B23BE /* SwiftUI-Kit */,
 			);
 			productName = "Ecorial-Test-SwiftUI";
 			productReference = CE33410225A06029004CE32B /* Ecorial-Test-SwiftUI.app */;
@@ -273,6 +276,7 @@
 			mainGroup = CE3340F925A06029004CE32B;
 			packageReferences = (
 				CEBD739225A0639C008B8D91 /* XCRemoteSwiftPackageReference "SwiftUI-UDF" */,
+				CEFDC13325A1D211004B23BE /* XCRemoteSwiftPackageReference "SwiftUIKit" */,
 			);
 			productRefGroup = CE33410325A06029004CE32B /* Products */;
 			projectDirPath = "";
@@ -531,6 +535,14 @@
 				minimumVersion = 0.1.21;
 			};
 		};
+		CEFDC13325A1D211004B23BE /* XCRemoteSwiftPackageReference "SwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Maks-Jago/SwiftUIKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -538,6 +550,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CEBD739225A0639C008B8D91 /* XCRemoteSwiftPackageReference "SwiftUI-UDF" */;
 			productName = "SwiftUI-UDF";
+		};
+		CEFDC13425A1D211004B23BE /* SwiftUI-Kit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEFDC13325A1D211004B23BE /* XCRemoteSwiftPackageReference "SwiftUIKit" */;
+			productName = "SwiftUI-Kit";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
