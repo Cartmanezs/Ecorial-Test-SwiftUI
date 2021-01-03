@@ -20,52 +20,41 @@ struct DetailViewComponent: Component {
     
     var body: some View {
         ScrollView {
-            //GeometryReader { proxy in
-        ZStack(alignment: .bottom) {
-            Image(props.user.image).aspectFill()//.edgesIgnoringSafeArea(.all)
-            
-            Rectangle()
-                .foregroundColor(.clear)
-                .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack {
+            ZStack(alignment: .bottom) {
+                Image(props.user.image).aspectFill()
+                
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
+                    .edgesIgnoringSafeArea(.all)
+                
                 VStack {
-                HStack {
-                    Button(action: self.presentationMode.dismissAction() ) {
-                        Image.backIcon
+                    HStack {
+                        Button(action: self.presentationMode.dismissAction() ) {
+                            Image.backIcon
+                        }
+                        Spacer()
+                        Button(action: {} ) {
+                            Image.favIcon
+                        }
+                        .padding(.trailing, 20)
+                        .shadow(color: Color.gray, radius: 4, x: 0, y: 2)
                     }
+                    .padding(.top, 65)
+                    .padding(.horizontal, 20)
+                    
                     Spacer()
-                    Button(action: {} ) {
-                        Image.favIcon
-                    }
-                    .padding(.trailing, 20)
-                    .shadow(color: Color.gray, radius: 4, x: 0, y: 2)
+                    
+                    userDetails
+                    buttons
+                        .padding(.bottom, 40)
                 }
-                .padding(.top, 20)
-                .padding(.horizontal, 10)
-                
-                Spacer()
-                
-                userDetails
-                buttons
-                    //.frame(height: proxy.size.height + 70)
-
-                }
-                .edgesIgnoringSafeArea(.all)
-
-                .frame(height: UIScreen.main.bounds.size.height)
-               // restingPlaces
-                   // .padding(.bottom, proxy.safeAreaInsets.top)
-
             }
+            .frame(height: UIScreen.main.bounds.size.height - 50)
+            .hideNavigationBar()
             
-            
+            restingPlaces
         }
-            
-            
-        .hideNavigationBar()
-    }
         .frame(maxHeight: .infinity)
         .edgesIgnoringSafeArea(.top)
         .background(Color.black).edgesIgnoringSafeArea(.all)
@@ -105,7 +94,7 @@ extension DetailViewComponent {
     }
     
     var buttons: some View {
-        HStack {
+        HStack(spacing: 15) {
             ToolButton(
                 action: {},
                 iconName: "camera",
@@ -126,25 +115,48 @@ extension DetailViewComponent {
     }
     
     var restingPlaces: some View {
-        ScrollView(.horizontal) {
-            HStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .foregroundColor(.white)
-                    .frame(
-                        width: 200,
-                        height: 320,
-                        alignment: .center
+        ZStack {
+            Rectangle()
+                .foregroundColor(Color.placeHolder)
+                .frame(
+                    height: 400,
+                    alignment: .center
                 )
-                RoundedRectangle(cornerRadius: 15)
+            VStack(alignment: .leading, spacing: 30) {
+                Text("Resting Places")
+                    .font(.system(size: 20))
+                    .padding(.top, 5)
+                    .padding(.horizontal, 40)
+                
+                ScrollView(.horizontal) {
+                    HStack(spacing: 20) {
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(
+                                width: 320,
+                                height: 267,
+                                alignment: .center
+                            )
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(
+                                width: 320,
+                                height: 267,
+                                alignment: .center
+                            )
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(
+                                width: 320,
+                                height: 267,
+                                alignment: .center
+                            )
+                    }
                     .foregroundColor(.white)
-                    .frame(
-                        width: 200,
-                        height: 320,
-                        alignment: .center
-                )
+                    .padding(.horizontal, 40)
+                    .shadow(
+                        color: Color.gray.opacity(0.3),
+                        radius: 5, x: 0, y: 3
+                    )
+                }
             }
-
-            //.offset(y: 100)
         }
     }
     

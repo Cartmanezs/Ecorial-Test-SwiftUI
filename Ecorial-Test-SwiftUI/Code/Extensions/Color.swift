@@ -11,4 +11,5 @@ import SwiftUI
 extension Color {
     static let segmentedGray: Color = .init("segGray")
     static let ecoBlue: Color = .init("ecoBlue")
+    static let placeHolder: Color = .init("placeHolder")
 }
