@@ -28,17 +28,17 @@ struct MainViewComponent<AddUser: Container, DetailView: Container>: Component {
     var body: some View {
         
         ZStack {
-         //   Text("").sheetContainer(isPresented: $isUserDetailsPresented, container: self.props.userContainer(userToDetails ?? UserInfo.fakeItem()))
+            Text("").sheetContainer(isPresented: $isUserDetailsPresented, container: self.props.userContainer(userToDetails ?? UserInfo.fakeItem()))
 
 //            NavigationLink(
 //                destination: props.userContainer(userToDetails ?? UserInfo.fakeItem())
 //            ) {
 //                Text("1")
 //            }
-            NavigationLinkItem(
-                item: self.$userToDetails,
-                destination: props.userContainer
-            )
+//            NavigationLinkItem(
+//                item: self.$userToDetails,
+//                destination: props.userContainer
+//            )
             VStack {
                 headerView
                 usersView
@@ -127,10 +127,11 @@ extension MainViewComponent {
             ForEach(users, id: \.self) { user in
                 UserRowView(user: user)
                     .onTapGesture {
-                        isUserDetailsPresented = true 
-                        //self.props.userAction(user)
+                        isUserDetailsPresented = true
+                       // self.props.userAction(user)
                         print("work")
                         self.userToDetails = user
+ 
 //                        self.projectAction(project)
                    }
             }

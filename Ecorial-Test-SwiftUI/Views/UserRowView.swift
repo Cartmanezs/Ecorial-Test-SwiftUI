@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUI_Kit
 
 struct UserRowView: View {
     
@@ -13,7 +14,10 @@ struct UserRowView: View {
     
     var body: some View {
         ZStack {
-            Image(user.image).resizable().frame(height: 288)
+            Image(user.image)
+                .resizable()
+                .aspectFill()
+                .frame(height: 288)
             descriptionView
         }
         .cornerRadius(10)
@@ -36,6 +40,10 @@ extension UserRowView {
     var userBio: some View {
         VStack(alignment: .leading, spacing: 7) {
             Image(user.userPhoto)
+                .resizable()
+                .aspectFill()
+                .frame(width: 101, height: 101)
+                .clipShape(  RoundedRectangle(cornerRadius: 22))
                 .overlay(
                     RoundedRectangle(cornerRadius: 22)
                         .stroke(Color.white, lineWidth: 2)
