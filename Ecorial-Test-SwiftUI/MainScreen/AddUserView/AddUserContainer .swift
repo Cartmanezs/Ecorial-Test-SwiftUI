@@ -16,7 +16,7 @@ struct AddUserContainer: Container {
     func map(state: AppState, store: AppEnvironmentStore) -> ContainerComponent.Props {
         .init(
             title: Binding(
-                get: {""},// { state.addExpenseForm.title },
+                get: { state.usersForm.title },
                 set: { store.dispatch(AnyAction.UpdateUserTitle(text: $0)) }
             ),
             dateStart: Binding(

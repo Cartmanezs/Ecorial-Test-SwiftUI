@@ -72,7 +72,7 @@ extension MainViewComponent {
                 usersList
                     .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
             } else {
-                Text("2")
+                favUsersList
                     .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
             }
         }
@@ -127,12 +127,29 @@ extension MainViewComponent {
             }
         }
     }
+    
+    var favUsersList: some View {
+        VStack(spacing: 5) {
+            ForEach(favUsers, id: \.self) { user in
+                UserRowView(user: user)
+                    .onTapGesture {
+                        withAnimation {
+                            self.userToDetails = user
+                        }
+                }
+            }
+        }
+    }
 }
 
 // MARK: - Computed Properties
 extension MainViewComponent {
     var users: [UserInfo] {
-        self.props.users.compactMap { self.props.userById($0) }
+        self.props.users.compactMap { self.props.userById($0) }.filter { $0.userStatus == .none}
+    }
+    
+    var favUsers: [UserInfo] {
+        self.props.users.compactMap { self.props.userById($0) }.filter { $0.userStatus == .favorite}
     }
 }
 

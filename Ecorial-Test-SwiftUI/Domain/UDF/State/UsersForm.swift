@@ -13,6 +13,7 @@ struct UsersForm: Reducible {
     var isNavigateToDetails: Bool = false
     var dateStart: Date = Date()
     var dateEnd: Date = Date()
+    var title: String = ""
     
     mutating func reduce(_ action: AnyAction) {
         switch action.value {
@@ -24,6 +25,8 @@ struct UsersForm: Reducible {
             dateStart = action.date
         case let action as AnyAction.UpdateDateEnd:
             dateEnd = action.date
+        case let action as AnyAction.UpdateUserTitle:
+            title = action.text
         default:
             break
         }

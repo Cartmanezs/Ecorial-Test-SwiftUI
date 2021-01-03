@@ -38,12 +38,12 @@ struct AddUserComponent: Component {
            
             datePickersView
                 .padding(.bottom, 40)
-
             Button(action: props.addUserAction) {
                 Text(props.buttonTitle)
             }
             .frame(width: 157, height: 43)
             .buttonStyle(MemorialButtonStyle())
+            //.disabled(true)
             
             Spacer()
         }
@@ -76,7 +76,6 @@ extension AddUserComponent {
             }
         }
         .labelsHidden()
-
     }
 }
 

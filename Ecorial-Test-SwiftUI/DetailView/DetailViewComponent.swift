@@ -19,8 +19,10 @@ struct DetailViewComponent: Component {
     @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
-        ZStack {
-            Image(props.user.image).aspectFill().edgesIgnoringSafeArea(.all)
+        ScrollView {
+            GeometryReader { proxy in
+        ZStack(alignment: .bottom) {
+            Image(props.user.image).aspectFill()//.edgesIgnoringSafeArea(.all)
             
             Rectangle()
                 .foregroundColor(.clear)
@@ -28,6 +30,7 @@ struct DetailViewComponent: Component {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
+                VStack {
                 HStack {
                     Button(action: self.presentationMode.dismissAction() ) {
                         Image.backIcon
@@ -36,7 +39,7 @@ struct DetailViewComponent: Component {
                     Button(action: {} ) {
                         Image.favIcon
                     }
-                    .padding(.trailing, 10)
+                    .padding(.trailing, 20)
                     .shadow(color: Color.gray, radius: 4, x: 0, y: 2)
                 }
                 .padding(.top, 20)
@@ -46,9 +49,24 @@ struct DetailViewComponent: Component {
                 
                 userDetails
                 buttons
+                    .frame(height: proxy.size.height + 70)
+
+                }
+               // restingPlaces
+                   // .padding(.bottom, proxy.safeAreaInsets.top)
+
             }
+            
+            
         }
+            
+        .edgesIgnoringSafeArea(.top)
+            }
         .hideNavigationBar()
+    }
+        .frame(maxHeight: .infinity)
+        .edgesIgnoringSafeArea(.top)
+        .background(Color.black).edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -80,7 +98,7 @@ extension DetailViewComponent {
                 .foregroundColor(.white)
             }
         }
-        .padding(.bottom, 30)
+        .padding(.bottom, 20)
         .padding(.leading, -60)
     }
     
@@ -102,7 +120,30 @@ extension DetailViewComponent {
                 text: "Share memorial"
             )
         }
-        .padding(.bottom, 40)
+        .padding(.bottom, 20)
+    }
+    
+    var restingPlaces: some View {
+        ScrollView(.horizontal) {
+            HStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .foregroundColor(.white)
+                    .frame(
+                        width: 200,
+                        height: 320,
+                        alignment: .center
+                )
+                RoundedRectangle(cornerRadius: 15)
+                    .foregroundColor(.white)
+                    .frame(
+                        width: 200,
+                        height: 320,
+                        alignment: .center
+                )
+            }
+
+            //.offset(y: 100)
+        }
     }
     
     struct ToolButton: View {
