@@ -14,25 +14,23 @@ struct AddUserComponent: Component {
         var dateStart: Binding<Date>
         var dateEnd: Binding<Date>
         var addUserAction: Command
-        var buttonTitle: String
     }
     
     var props: Props
     
     var body: some View {
         VStack(spacing: 10) {
-            Text("Create Memorial")
+            Text(String.localized().addUser.title)
                 .font(.title)
                 .padding(.bottom, 30)
             detailsView
             datePickersView
                 .padding(.bottom, 40)
             Button(action: props.addUserAction) {
-                Text(props.buttonTitle)
+                Text(String.localized().addUser.buttonTitle)
             }
             .frame(width: 157, height: 43)
             .buttonStyle(MemorialButtonStyle())
-            //.disabled(true)
             
             Spacer()
         }
@@ -44,12 +42,12 @@ struct AddUserComponent: Component {
 extension AddUserComponent {
     var detailsView: some View {
         VStack(alignment: .leading, spacing: 15) {
-            Text("Person’s name")
+            Text(String.localized().addUser.persName)
                 .font(.headline)
-            Text("Each memorial is dedicated to a person. Input the full name in the field below.")
+            Text(String.localized().addUser.persDescription)
                 .font(.subheadline)
             
-            TextField("Full Name", text: props.title)
+            TextField(String.localized().addUser.fullName, text: props.title)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.bottom, 5)
         }
@@ -59,7 +57,7 @@ extension AddUserComponent {
     var datePickersView: some View {
         HStack(alignment: .center) {
             VStack {
-                Text("Starting Date")
+                Text(String.localized().addUser.startDate)
                     .foregroundColor(.gray)
                 DatePicker(
                     "Starting",
@@ -69,7 +67,7 @@ extension AddUserComponent {
             }
             Spacer()
             VStack {
-                Text("Ending Date")
+                Text(String.localized().addUser.endDate)
                     .foregroundColor(.gray)
                 DatePicker(
                     "Ending",
@@ -89,8 +87,7 @@ struct AddUserComponent_Previews: PreviewProvider {
                 title: .constant(""),
                 dateStart: .constant(Date()),
                 dateEnd: .constant(Date()),
-                addUserAction: {},
-                buttonTitle: "Create memorial"
+                addUserAction: {}
             )
         )
     }

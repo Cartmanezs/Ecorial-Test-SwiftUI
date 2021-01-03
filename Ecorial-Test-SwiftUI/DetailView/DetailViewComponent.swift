@@ -20,7 +20,7 @@ struct DetailViewComponent: Component {
     
     var body: some View {
         ScrollView {
-            GeometryReader { proxy in
+            //GeometryReader { proxy in
         ZStack(alignment: .bottom) {
             Image(props.user.image).aspectFill()//.edgesIgnoringSafeArea(.all)
             
@@ -49,9 +49,12 @@ struct DetailViewComponent: Component {
                 
                 userDetails
                 buttons
-                    .frame(height: proxy.size.height + 70)
+                    //.frame(height: proxy.size.height + 70)
 
                 }
+                .edgesIgnoringSafeArea(.all)
+
+                .frame(height: UIScreen.main.bounds.size.height)
                // restingPlaces
                    // .padding(.bottom, proxy.safeAreaInsets.top)
 
@@ -60,8 +63,7 @@ struct DetailViewComponent: Component {
             
         }
             
-        .edgesIgnoringSafeArea(.top)
-            }
+            
         .hideNavigationBar()
     }
         .frame(maxHeight: .infinity)

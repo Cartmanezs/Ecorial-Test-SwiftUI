@@ -84,7 +84,7 @@ extension MainViewComponent {
             ZStack(alignment: isMainViewPresented ? .leading : .trailing) {
                 Color.white
                 Color.segmentedGray
-                    .frame(width: proxy.size.width / 2, height: proxy.size.height - 5)
+                    .frame(width: proxy.size.width / 2, height: proxy.size.height - 4)
                     .cornerRadius(14)
                     .padding(.leading, 2)
                     .padding(.trailing, 2)

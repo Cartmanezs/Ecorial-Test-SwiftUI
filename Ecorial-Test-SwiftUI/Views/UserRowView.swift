@@ -43,7 +43,7 @@ extension UserRowView {
     var likedStatusView: some View {
         Image.favIcon
             .shadow(color: Color.gray, radius: 4, x: 0, y: 2)
-            .offset(x: 120, y: -100)
+            .offset(x: 130, y: -110)
     }
     
     var userBio: some View {

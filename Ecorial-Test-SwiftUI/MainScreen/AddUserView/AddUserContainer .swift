@@ -27,8 +27,7 @@ struct AddUserContainer: Container {
                 get: { state.usersForm.dateEnd },
                 set: { store.dispatch(AnyAction.UpdateDateEnd(date: $0)) }
             ),
-            addUserAction:  { addUserAction(store: store) },
-            buttonTitle: "Add memorial"
+            addUserAction:  { addUserAction(store: store) }
         )
     }
     func onContainerAppear(store: EnvironmentStore<AppState>) {
