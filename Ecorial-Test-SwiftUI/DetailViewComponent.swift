@@ -19,23 +19,35 @@ struct DetailViewComponent: Component {
     @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
-        VStack {
-            HStack {
-                Button(action: self.presentationMode.dismissAction() ) {
-                    Image.backIcon
+        ZStack {
+            Image(props.user.image).aspectFill().edgesIgnoringSafeArea(.all)
+            
+            Rectangle()
+                .foregroundColor(.clear)
+                .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                HStack {
+                    Button(action: self.presentationMode.dismissAction() ) {
+                        Image.backIcon
+                    }
+                    Spacer()
+                    Button(action: {} ) {
+                        Image.favIcon
+                    }
+                    .padding(.trailing, 10)
+                    .shadow(color: Color.gray, radius: 4, x: 0, y: 2)
                 }
+                .padding(.top, 10)
+                .padding(.horizontal, 20)
+                
                 Spacer()
-                Button(action: {} ) {
-                    Image.favIcon
-                }
-                .shadow(color: Color.gray, radius: 4, x: 0, y: 2)
+                
+                userDetails
+                buttons
             }
-            .padding(.horizontal, 15)
-            Spacer()
-            userDetails
-            buttons
         }
-        .background(Image(props.user.image))
     }
 }
 
@@ -49,7 +61,7 @@ extension DetailViewComponent {
                 .clipShape( RoundedRectangle(cornerRadius: 22))
                 .overlay(
                     RoundedRectangle(cornerRadius: 22)
-                        .stroke(Color.white, lineWidth: 2)
+                        .stroke(Color.white, lineWidth: 3)
                 )
             
             HStack {
@@ -64,8 +76,8 @@ extension DetailViewComponent {
                 .foregroundColor(.white)
             }
         }
-        .padding(.bottom, 20)
-        .padding(.leading, -70)
+        .padding(.bottom, 30)
+        .padding(.leading, -80)
     }
     
     var buttons: some View {
@@ -86,8 +98,9 @@ extension DetailViewComponent {
                 text: "Share memorial"
             )
         }
-        .padding(.bottom, 20)
+        .padding(.bottom, 40)
     }
+    
     struct ToolButton: View {
         var action: Command
         var iconName: String
