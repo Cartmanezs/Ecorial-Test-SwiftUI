@@ -33,7 +33,7 @@ extension UserRowView {
                 .offset(y: 100)
             userBio
                 .offset(y: 45)
-                .padding(.leading, -10)
+                .padding(.trailing, 10)
             if user.userStatus == .favorite {
                 likedStatusView
             }
@@ -43,7 +43,8 @@ extension UserRowView {
     var likedStatusView: some View {
         Image.favIcon
             .shadow(color: Color.gray, radius: 4, x: 0, y: 2)
-            .offset(x: 130, y: -110)
+            .offset(y: -110)
+            .padding(.leading, 240)
     }
     
     var userBio: some View {
