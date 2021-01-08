@@ -30,5 +30,7 @@ extension AnyAction {
     }
     
     struct AddUser: AppActionable {}
+    
+    struct LoadUserItems: AppActionable {}
 }
    

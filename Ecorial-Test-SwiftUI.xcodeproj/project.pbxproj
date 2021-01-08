@@ -23,6 +23,7 @@
 		CE33411225A0602D004CE32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE33411025A0602D004CE32B /* LaunchScreen.storyboard */; };
 		CE53278525A0AE7B00179866 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53278425A0AE7B00179866 /* DateFormatter.swift */; };
 		CE53278825A0B9E000179866 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53278725A0B9E000179866 /* RoundedCorner.swift */; };
+		CE6B4A3D25A870CC00460A81 /* AddUserMiddlewar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6B4A3C25A870CC00460A81 /* AddUserMiddlewar.swift */; };
 		CEB4DA1F25A2096000918253 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4DA1E25A2096000918253 /* NavigationBar.swift */; };
 		CEB4DA2425A25D3000918253 /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4DA2325A25D3000918253 /* Localizations.swift */; };
 		CEB4DA2725A25D4400918253 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEB4DA2625A25D4400918253 /* Localizable.strings */; };
@@ -61,6 +62,7 @@
 		CE33411325A0602D004CE32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE53278425A0AE7B00179866 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		CE53278725A0B9E000179866 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		CE6B4A3C25A870CC00460A81 /* AddUserMiddlewar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserMiddlewar.swift; sourceTree = "<group>"; };
 		CEB4DA1E25A2096000918253 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		CEB4DA2325A25D3000918253 /* Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
 		CEB4DA2625A25D4400918253 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		CE07E3A325A0CAFE00D8207E /* UDF */ = {
 			isa = PBXGroup;
 			children = (
+				CE6B4A3B25A870B300460A81 /* Middlewar */,
 				CE07E3A925A0CB5E00D8207E /* Storage */,
 				CE07E3A425A0CB1100D8207E /* State */,
 				CE07E3B325A0CC1100D8207E /* AppAction.swift */,
@@ -180,6 +183,14 @@
 				CE33410E25A0602D004CE32B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE6B4A3B25A870B300460A81 /* Middlewar */ = {
+			isa = PBXGroup;
+			children = (
+				CE6B4A3C25A870CC00460A81 /* AddUserMiddlewar.swift */,
+			);
+			path = Middlewar;
 			sourceTree = "<group>";
 		};
 		CEB4DA2125A20D7800918253 /* DetailView */ = {
@@ -363,6 +374,7 @@
 				CE07E3BD25A0CFA100D8207E /* MainViewComponent.swift in Sources */,
 				CE07E3A025A0CABB00D8207E /* Types.swift in Sources */,
 				CEB733CA25A09EFD003046B5 /* BlurView.swift in Sources */,
+				CE6B4A3D25A870CC00460A81 /* AddUserMiddlewar.swift in Sources */,
 				CE07E3AE25A0CBB900D8207E /* UsersFlow.swift in Sources */,
 				CEFDC0D725A0DDCE004B23BE /* AddUserComponent.swift in Sources */,
 				CE07E39A25A0C62300D8207E /* Color.swift in Sources */,
