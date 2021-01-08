@@ -16,22 +16,23 @@ struct AddUserContainer: Container {
     func map(state: AppState, store: AppEnvironmentStore) -> ContainerComponent.Props {
         .init(
             title: Binding(
-                get: { state.usersForm.title },
+                get: { state.addUserForm.title },
                 set: { store.dispatch(AnyAction.UpdateUserTitle(text: $0)) }
             ),
             dateStart: Binding(
-                get: { state.usersForm.dateStart },
+                get: { state.addUserForm.dateStart },
                 set: { store.dispatch(AnyAction.UpdateDateStart(date: $0)) }
             ),
             dateEnd: Binding(
-                get: { state.usersForm.dateEnd },
+                get: { state.addUserForm.dateEnd },
                 set: { store.dispatch(AnyAction.UpdateDateEnd(date: $0)) }
             ),
-            addUserAction:  { addUserAction(store: store) }
+            addUserAction:  { addUserAction(store: store) },
+            isAddUserEnabled: store.state.addUserForm.isAddUserEnabled
         )
     }
     func onContainerAppear(store: EnvironmentStore<AppState>) {
-
+        store.dispatch(AnyAction.ResetAddUserForm())
     }
 }
 

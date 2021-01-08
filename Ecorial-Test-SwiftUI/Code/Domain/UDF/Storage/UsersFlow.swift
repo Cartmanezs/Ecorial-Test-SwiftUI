@@ -20,6 +20,9 @@ enum UsersFlow: IdentifiableFlow {
             self = .none
             
         case is AnyAction.LoadUserItems: self = .loading
+            
+        case is AnyAction.DidUserAdded:
+            self = .loading
 
         case let action as AnyAction.Error where action.id == UsersFlow.id:
             self = .none

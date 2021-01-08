@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
        
+        store.subscribe(observer: UserItemsMiddleware(store: store).asObserver)
         store.subscribe(observer: AddUserMiddleware(store: store).asObserver)
 
         let contentView = MainViewContainer().environmentObject(environmentStore)

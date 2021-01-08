@@ -14,10 +14,16 @@ struct AppState: Reducible {
     var usersFlow = UsersFlow()
     var usersForm = UsersForm()
     
+    var addUserForm = AddUserForm()
+    var addUserFlow = AddUserFlow()
+    
     mutating func reduce(_ action: AnyAction) {
         allUsers.reduce(action)
         usersFlow.reduce(action)
         usersForm.reduce(action)
+        
+        addUserFlow.reduce(action)
+        addUserForm.reduce(action)
     }
     
     

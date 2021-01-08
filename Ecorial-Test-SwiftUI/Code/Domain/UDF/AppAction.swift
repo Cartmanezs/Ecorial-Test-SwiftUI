@@ -31,6 +31,10 @@ extension AnyAction {
     
     struct AddUser: AppActionable {}
     
+    struct DidUserAdded: AppActionable {}
+    
     struct LoadUserItems: AppActionable {}
+    
+    struct ResetAddUserForm: AppActionable {}
 }
    

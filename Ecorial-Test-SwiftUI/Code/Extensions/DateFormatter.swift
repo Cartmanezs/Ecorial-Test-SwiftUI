@@ -22,4 +22,10 @@ extension DateFormatter {
         formatter.dateStyle = .full
         return formatter
     }()
+    
+    static let isoDate: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = isoDateStringFormat
+        return formatter
+    }()
 }

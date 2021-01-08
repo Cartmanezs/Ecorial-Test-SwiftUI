@@ -14,6 +14,7 @@ struct AddUserComponent: Component {
         var dateStart: Binding<Date>
         var dateEnd: Binding<Date>
         var addUserAction: Command
+        var isAddUserEnabled: Bool
     }
     
     var props: Props
@@ -29,9 +30,8 @@ struct AddUserComponent: Component {
             Button(action: props.addUserAction) {
                 Text(String.localized().addUser.buttonTitle)
             }
-            .frame(width: 157, height: 43)
-            .buttonStyle(MemorialButtonStyle())
-            
+            .frame(width: 157)
+            .buttonStyle(MemorialButtonStyle(isEnabled: props.isAddUserEnabled, height: 34))
             Spacer()
         }
         .padding(.top, 20)
@@ -87,7 +87,8 @@ struct AddUserComponent_Previews: PreviewProvider {
                 title: .constant(""),
                 dateStart: .constant(Date()),
                 dateEnd: .constant(Date()),
-                addUserAction: {}
+                addUserAction: {},
+                isAddUserEnabled: false 
             )
         )
     }
