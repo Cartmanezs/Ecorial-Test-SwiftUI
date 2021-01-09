@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI_UDF
 
 struct UsersForm: Reducible {
-    var selectedUser: UserInfo.Id = .init(value: "")
+    var selectedUser: UserInfo.Id = .init(value: 0)
     var isNavigateToDetails: Bool = false
     
     mutating func reduce(_ action: AnyAction) {

@@ -3,4 +3,102 @@
    uuid = "394CAA88-FC4B-43AF-8B64-A53546551DE0"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2334AD63-2563-467D-A6D8-6AD63A0036D4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ecorial-Test-SwiftUI/Code/Domain/UDF/Middlewar/AddUserMiddleware.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "upstream()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2334AD63-2563-467D-A6D8-6AD63A0036D4 - 5e5929286af4fe26"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecorial_Test_SwiftUI.AddUserEffect.upstream() -&gt; Combine.AnyPublisher&lt;SwiftUI_UDF.AnyAction, Swift.Never&gt;"
+                  moduleName = "Ecorial-Test-SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Ecorial-Test-SwiftUI/Ecorial-Test-SwiftUI/Code/Domain/UDF/Middlewar/AddUserMiddleware.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "634">
+               </Location>
+               <Location
+                  uuid = "2334AD63-2563-467D-A6D8-6AD63A0036D4 - 8b9cbbdc7d0cab21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Ecorial_Test_SwiftUI.UserInfo&gt;) -&gt; SwiftUI_UDF.AnyAction in Ecorial_Test_SwiftUI.AddUserEffect.upstream() -&gt; Combine.AnyPublisher&lt;SwiftUI_UDF.AnyAction, Swift.Never&gt;"
+                  moduleName = "Ecorial-Test-SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Ecorial-Test-SwiftUI/Ecorial-Test-SwiftUI/Code/Domain/UDF/Middlewar/AddUserMiddleware.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "14">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F7788B65-AFB0-451C-876F-DB8ACEAB0CD4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ecorial-Test-SwiftUI/Code/Domain/UDF/Middlewar/AddUserMiddleware.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "upstream()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B72E58C7-8F70-4154-B95D-B410878AD15A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ecorial-Test-SwiftUI/Code/Domain/UDF/Middlewar/AddUserMiddleware.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "observe(state:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "03E9D97F-6C5C-41CE-AC01-F6B3079A7943"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ecorial-Test-SwiftUI/Code/Domain/UDF/Middlewar/AddUserMiddleware.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "upstream()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

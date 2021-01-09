@@ -24,6 +24,8 @@ struct MainViewContainer: Container {
         if store.state.allUsers.byId.keys.isEmpty {
             let fake = UserInfo.fakeItems()
             store.dispatch(AnyAction.DidLoadItems(items: fake, id: UsersFlow.id))
+        } else {
+            store.dispatch(AnyAction.LoadUserItems())
         }
     }
 }

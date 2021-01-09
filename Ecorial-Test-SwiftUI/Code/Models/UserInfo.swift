@@ -9,7 +9,7 @@ import Foundation
 
 struct UserInfo: Hashable, Identifiable {
     struct Id: Hashable {
-        let value: String
+        let value: Int
     }
     var id: Id
     let name: String
@@ -31,7 +31,7 @@ extension UserInfo: Equatable {
 // MARK: - Faking
 extension UserInfo: Faking {
     init() {
-        id = .init(value: UUID().uuidString)
+        id = .init(value: 1)
         name = "Steve Rogers"
         description = "Soldier, philanthropist, real hero"
         dateStart = Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date()
@@ -39,6 +39,61 @@ extension UserInfo: Faking {
         image = "background"
         userPhoto = "userPhoto"
         userStatus = Int.random(in: 0...1) == 0 ? .none : .favorite
+    }
+    
+    static func fakeItems() -> [UserInfo] {
+        [
+            .init(
+                id: .init(value: 1),
+                name: "Steve Rogers",
+                description: "Soldier, philanthropist, real hero",
+                dateStart: Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date(),
+                dateEnd: Calendar.current.date(byAdding: .month, value: 3, to: Date()) ?? Date(),
+                image: "background",
+                userPhoto: "userPhoto",
+                userStatus: Int.random(in: 0...1) == 0 ? .none : .favorite
+            ),
+            .init(
+                id: .init(value: 2),
+                name: "Test",
+                description: "Test Test",
+                dateStart: Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date(),
+                dateEnd: Calendar.current.date(byAdding: .month, value: 3, to: Date()) ?? Date(),
+                image: "background",
+                userPhoto: "userPhoto",
+                userStatus: Int.random(in: 0...1) == 0 ? .none : .favorite
+            ),
+            .init(
+                id: .init(value: 3),
+                name: "Igor",
+                description: "Test Igor",
+                dateStart: Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date(),
+                dateEnd: Calendar.current.date(byAdding: .month, value: 3, to: Date()) ?? Date(),
+                image: "background",
+                userPhoto: "userPhoto",
+                userStatus: Int.random(in: 0...1) == 0 ? .none : .favorite
+            ),
+            .init(
+                id: .init(value: 4),
+                name: "Mark",
+                description: "Test Mark",
+                dateStart: Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date(),
+                dateEnd: Calendar.current.date(byAdding: .month, value: 3, to: Date()) ?? Date(),
+                image: "background",
+                userPhoto: "userPhoto",
+                userStatus: Int.random(in: 0...1) == 0 ? .none : .favorite
+            ),
+            .init(
+                id: .init(value: 5),
+                name: "Jo",
+                description: "Test Jo",
+                dateStart: Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date(),
+                dateEnd: Calendar.current.date(byAdding: .month, value: 3, to: Date()) ?? Date(),
+                image: "background",
+                userPhoto: "userPhoto",
+                userStatus: Int.random(in: 0...1) == 0 ? .none : .favorite
+            )
+        ]
     }
 }
 

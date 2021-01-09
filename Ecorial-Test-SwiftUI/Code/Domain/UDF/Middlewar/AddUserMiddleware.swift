@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 import SwiftUI_UDF
-//import PlaidBankAPI
 
 struct AddUserMiddleware: Middleware {
     var store: AppStore
@@ -43,6 +42,7 @@ struct AddUserMiddleware: Middleware {
             self.cancellable = addUserEffect.upstream().sink { action in
                 self.cancellable = nil
                 self.store.dispatch(action: action)
+                print(action)
             }
             
         default:
@@ -62,10 +62,10 @@ struct AddUserEffect<ErrorId: Hashable>: Effect {
         self.formData = formData
         self.errorId = errorId
     }
-
+            
     func upstream() -> AnyPublisher<AnyAction, Never> {
-            Just(UserInfo.fakeItems())
-       // ExpensesAPIClient.addExpensePublisher(token: token, formData: formData)
+
+        return Just(UserInfo.fakeItems())
             .receive(on: queue)
             .map { _ in AnyAction.DidUserAdded().eraseToAnyAction() }
             .catch { Just(AnyAction.Error(error: $0.localizedDescription, id: self.errorId).eraseToAnyAction()) }
@@ -73,49 +73,14 @@ struct AddUserEffect<ErrorId: Hashable>: Effect {
     }
 }
 
-//        switch state.transactionsFlow {
-//        case .loading:
-//            let effect = TransactionsEffect(queue: queue, token: state.userCredentials.token, errorId: TransactionsFlow.id)
-//            self.cancellable = effect.upstream().sink { action in
-//                self.cancellable = nil
-//                self.store.dispatch(action: action)
-//            }
-//            
-//        default:
-//            break
-//        }
-//    }
-//}
-//
-//struct TransactionsEffect<ErrorId: Hashable>: Effect {
-//    let token: String
-//    let queue: DispatchQueue
-//    let errorId: ErrorId
-//    
-//    init(queue: DispatchQueue = DispatchQueue(label: "Transactions queue"), token: String, errorId: ErrorId) {
-//        self.queue = queue
-//        self.errorId = errorId
-//        self.token = token
-//    }
-//    
-//    func upstream() -> AnyPublisher<AnyAction, Never> {
-//            Just(Transaction.fakeItems())
-//            .map {  AnyAction.DidLoadItems(items: $0, id: AccountsFlow.id).eraseToAnyAction() }
-////            TODO
-////        UserDataAPIClient.transactionsPublisher(token: token)
-////            .map { AnyAction.DidLoadItems(items: $0.map(\.asTransaction), id: AccountsFlow.id).eraseToAnyAction() }
-//            .catch { Just(AnyAction.Error(error: $0.localizedDescription, id: self.errorId).eraseToAnyAction()) }
-//            .receive(on: queue)
-//            .eraseToAnyPublisher()
-//    }
-//}
-
-import Foundation
-
 public struct AddUserFormData {
     let title: String
     let dateStart: String
     let dateEnd: String
+    let description: String = "Soldier, philanthropist, real hero"
+    let image: String = "background"
+    let userPhoto: String = "userPhoto"
+    let userStatus: UserStatus = .none
     
     public init(title: String, dateStart: String, dateEnd: String) {
         self.title = title

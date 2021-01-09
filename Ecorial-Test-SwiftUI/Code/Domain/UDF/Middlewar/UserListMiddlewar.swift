@@ -51,22 +51,10 @@ struct LoadItemsEffect<Id: Hashable>: Effect {
     
     func upstream() -> AnyPublisher<AnyAction, Never> {
         
-        return Just(UserInfo.fakeItems())
+        Just(UserInfo.fakeItems())
             .receive(on: queue)
             .map { AnyAction.DidLoadItem(item: $0, id: UsersFlow.id).eraseToAnyAction() }
             .delay(for: 1.0, scheduler: queue)
             .eraseToAnyPublisher()
-//        let userInfo = UserInfo.fakeItems()
-//        let group = ActionGroup(
-//            anyActions: [
-//                AnyAction(AnyAction.DidLoadItems(items: userInfo, id: id)),
-//              //  AnyAction(AnyAction.UpdateUserInfo(userName: "Some user data"))
-//            ]
-//        )
-//
-//        return Just(group.eraseToAnyAction())
-//            .receive(on: queue)
-//            .delay(for: 3, scheduler: queue)
-//            .eraseToAnyPublisher()
     }
 }

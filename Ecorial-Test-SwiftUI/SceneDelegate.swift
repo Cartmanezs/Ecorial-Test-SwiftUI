@@ -15,8 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let store = AppStore(initial: AppState()) { state, action in
         print("Reduce\t\t\t", action)
         state.reduce(action)
-//        print("State: \t", state)
-//        print("================================================================================================================================")
+        print("State: \t", state)
+        print("================================================================================================================================")
     }
     private lazy var environmentStore = AppEnvironmentStore(store: store)
 
