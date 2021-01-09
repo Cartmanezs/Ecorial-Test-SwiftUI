@@ -32,6 +32,7 @@ struct AddUserMiddleware: Middleware {
             let addUserEffect = AddUserEffect(
                 queue: queue,
                 formData: .init(
+                    id: state.allUsers.byId.count,
                     title: state.addUserForm.title,
                     dateStart: state.addUserForm.dateStart.asISODateString,
                     dateEnd: state.addUserForm.dateEnd.asISODateString
@@ -65,7 +66,7 @@ struct AddUserEffect<ErrorId: Hashable>: Effect {
             
     func upstream() -> AnyPublisher<AnyAction, Never> {
 
-        return Just(UserInfo.fakeItems())
+        Just(formData)
             .receive(on: queue)
             .map { _ in AnyAction.DidUserAdded().eraseToAnyAction() }
             .catch { Just(AnyAction.Error(error: $0.localizedDescription, id: self.errorId).eraseToAnyAction()) }
@@ -74,6 +75,10 @@ struct AddUserEffect<ErrorId: Hashable>: Effect {
 }
 
 public struct AddUserFormData {
+    struct Id: Hashable {
+        let value: Int
+    }
+    var id: Id
     let title: String
     let dateStart: String
     let dateEnd: String
@@ -82,7 +87,8 @@ public struct AddUserFormData {
     let userPhoto: String = "userPhoto"
     let userStatus: UserStatus = .none
     
-    public init(title: String, dateStart: String, dateEnd: String) {
+    public init(id: Int, title: String, dateStart: String, dateEnd: String) {
+        self.id = .init(value: id)
         self.title = title
         self.dateStart = dateStart
         self.dateEnd = dateEnd

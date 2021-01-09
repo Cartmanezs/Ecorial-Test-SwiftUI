@@ -28,8 +28,8 @@ struct UserItemsMiddleware: Middleware {
         }
         
         switch state.usersFlow {
-        case .loading:
-            self.cancellable = LoadItemsEffect(queue: queue, id: UsersFlow.id).upstream().sink { action in
+        case .loadingUsersItems:
+            self.cancellable = LoadItemsEffect(queue: queue, errorId: UsersFlow.id).upstream().sink { action in
                 self.cancellable = nil
                 self.store.dispatch(action: action)
             }
@@ -40,20 +40,20 @@ struct UserItemsMiddleware: Middleware {
     }
 }
 
-struct LoadItemsEffect<Id: Hashable>: Effect {
+struct LoadItemsEffect<ErrorId: Hashable>: Effect {
     let queue: DispatchQueue
-    let id: Id
+    let errorId: ErrorId
     
-    init(queue: DispatchQueue = DispatchQueue(label: "Load items queue"), id: Id) {
+    init(queue: DispatchQueue = DispatchQueue(label: "Load items queue"), errorId: ErrorId) {
         self.queue = queue
-        self.id = id
+        self.errorId = errorId
     }
     
     func upstream() -> AnyPublisher<AnyAction, Never> {
         
-        Just(UserInfo.fakeItems())
+         Just(UserInfo.fakeItems())
+            .map { AnyAction.DidLoadItems(items: $0, id: UsersFlow.id).eraseToAnyAction() }
             .receive(on: queue)
-            .map { AnyAction.DidLoadItem(item: $0, id: UsersFlow.id).eraseToAnyAction() }
             .delay(for: 1.0, scheduler: queue)
             .eraseToAnyPublisher()
     }

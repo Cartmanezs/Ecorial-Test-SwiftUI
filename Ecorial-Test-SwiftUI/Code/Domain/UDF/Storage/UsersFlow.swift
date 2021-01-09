@@ -10,7 +10,7 @@ import SwiftUI_UDF
 
 enum UsersFlow: IdentifiableFlow {
     case none
-    case loading
+    case loadingUsersItems
     
     init() { self = .none }
     
@@ -19,10 +19,11 @@ enum UsersFlow: IdentifiableFlow {
         case let action as AnyAction.DidLoadItems<UserInfo> where action.id == UsersFlow.id:
             self = .none
             
-        case is AnyAction.LoadUserItems: self = .loading
+        case is AnyAction.LoadUserItems:
+            self = .loadingUsersItems
             
         case is AnyAction.DidUserAdded:
-            self = .loading
+            self = .loadingUsersItems
 
         case let action as AnyAction.Error where action.id == UsersFlow.id:
             self = .none

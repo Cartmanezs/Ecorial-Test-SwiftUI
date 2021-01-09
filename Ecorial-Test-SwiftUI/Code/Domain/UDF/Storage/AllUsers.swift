@@ -17,7 +17,6 @@ struct AllUsers: Reducible {
             action.items.forEach { user in
                 byId[user.id] = user
             }
-            
         default:
             break
         }
