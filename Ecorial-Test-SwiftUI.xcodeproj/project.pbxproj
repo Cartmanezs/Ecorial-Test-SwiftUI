@@ -28,6 +28,7 @@
 		CE6B4A4525A8745B00460A81 /* AddUserForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6B4A4425A8745B00460A81 /* AddUserForm.swift */; };
 		CE6B4A4825A874CA00460A81 /* AddUserFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6B4A4725A874CA00460A81 /* AddUserFlow.swift */; };
 		CE6B4A4B25A87C7F00460A81 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6B4A4A25A87C7F00460A81 /* Date.swift */; };
+		CE6B4B4325AADC8C00460A81 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6B4B4225AADC8B00460A81 /* UIDevice.swift */; };
 		CEB4DA1F25A2096000918253 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4DA1E25A2096000918253 /* NavigationBar.swift */; };
 		CEB4DA2425A25D3000918253 /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4DA2325A25D3000918253 /* Localizations.swift */; };
 		CEB4DA2725A25D4400918253 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEB4DA2625A25D4400918253 /* Localizable.strings */; };
@@ -71,6 +72,7 @@
 		CE6B4A4425A8745B00460A81 /* AddUserForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserForm.swift; sourceTree = "<group>"; };
 		CE6B4A4725A874CA00460A81 /* AddUserFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserFlow.swift; sourceTree = "<group>"; };
 		CE6B4A4A25A87C7F00460A81 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		CE6B4B4225AADC8B00460A81 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		CEB4DA1E25A2096000918253 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		CEB4DA2325A25D3000918253 /* Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
 		CEB4DA2625A25D4400918253 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				CEB4DA1E25A2096000918253 /* NavigationBar.swift */,
 				CEB4DA2925A25E1A00918253 /* String.swift */,
 				CE6B4A4A25A87C7F00460A81 /* Date.swift */,
+				CE6B4B4225AADC8B00460A81 /* UIDevice.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				CE6B4A3D25A870CC00460A81 /* UserListMiddlewar.swift in Sources */,
 				CE6B4A4525A8745B00460A81 /* AddUserForm.swift in Sources */,
 				CE07E3AE25A0CBB900D8207E /* UsersFlow.swift in Sources */,
+				CE6B4B4325AADC8C00460A81 /* UIDevice.swift in Sources */,
 				CEFDC0D725A0DDCE004B23BE /* AddUserComponent.swift in Sources */,
 				CE07E39A25A0C62300D8207E /* Color.swift in Sources */,
 				CEB733BE25A08EF4003046B5 /* UserRowView.swift in Sources */,

@@ -44,7 +44,7 @@ extension UserRowView {
         Image.favIcon
             .shadow(color: Color.gray, radius: 4, x: 0, y: 2)
             .offset(y: -110)
-            .padding(.leading, 240)
+            .padding(.leading,UIDevice.isIPhone8 ? 250 : 290)
     }
     
     var userBio: some View {
