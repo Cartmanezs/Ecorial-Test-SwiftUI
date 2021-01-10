@@ -34,12 +34,12 @@ struct AddUserMiddleware: Middleware {
                 formData: .init(
                     id: state.allUsers.byId.count,
                     title: state.addUserForm.title,
-                    dateStart: state.addUserForm.dateStart.asISODateString,
-                    dateEnd: state.addUserForm.dateEnd.asISODateString
+                    dateStart: state.addUserForm.dateStart,
+                    dateEnd: state.addUserForm.dateEnd
                 ),
                 errorId: AddUserFlow.id
             )
-            
+
             self.cancellable = addUserEffect.upstream().sink { action in
                 self.cancellable = nil
                 self.store.dispatch(action: action)
@@ -68,7 +68,21 @@ struct AddUserEffect<ErrorId: Hashable>: Effect {
 
         Just(formData)
             .receive(on: queue)
-            .map { _ in AnyAction.DidUserAdded().eraseToAnyAction() }
+            .map { _ in AnyAction.DidUserAdded(
+                user: UserInfo
+                    .init(
+                        id: .init(value: formData.id.value),
+                        name: formData.title,
+                        description: "Test added item",
+                        dateStart: formData.dateStart,
+                        dateEnd: formData.dateEnd,
+                        image: "background",
+                        userPhoto: "userPhoto",
+                        userStatus: .none
+                    )
+                )
+                .eraseToAnyAction() 
+            }
             .catch { Just(AnyAction.Error(error: $0.localizedDescription, id: self.errorId).eraseToAnyAction()) }
             .eraseToAnyPublisher()
     }
@@ -80,14 +94,14 @@ public struct AddUserFormData {
     }
     var id: Id
     let title: String
-    let dateStart: String
-    let dateEnd: String
+    let dateStart: Date
+    let dateEnd: Date
     let description: String = "Soldier, philanthropist, real hero"
     let image: String = "background"
     let userPhoto: String = "userPhoto"
     let userStatus: UserStatus = .none
     
-    public init(id: Int, title: String, dateStart: String, dateEnd: String) {
+    public init(id: Int, title: String, dateStart: Date, dateEnd: Date) {
         self.id = .init(value: id)
         self.title = title
         self.dateStart = dateStart

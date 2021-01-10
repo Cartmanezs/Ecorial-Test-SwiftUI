@@ -15,6 +15,7 @@ struct MainViewComponent<AddUser: Container, DetailView: Container>: Component {
         var userById: (UserInfo.Id) -> UserInfo
         var addUser: AddUser
         var userContainer:(UserInfo) -> DetailView
+        var usersAddedItem: [UserInfo]
     }
     
     @State private var isMainViewPresented: Bool = true
@@ -117,7 +118,7 @@ extension MainViewComponent {
     
     var usersList: some View {
         VStack(spacing: 5) {
-            ForEach(users, id: \.self) { user in
+            ForEach(props.usersAddedItem, id: \.self) { user in
                 UserRowView(user: user)
                     .onTapGesture {
                         withAnimation {
@@ -130,7 +131,7 @@ extension MainViewComponent {
     
     var favUsersList: some View {
         VStack(spacing: 5) {
-            ForEach(favUsers, id: \.self) { user in
+            ForEach(props.usersAddedItem, id: \.self) { user in
                 UserRowView(user: user)
                     .onTapGesture {
                         withAnimation {
@@ -160,7 +161,8 @@ struct MainViewComponent_Previews: PreviewProvider {
                 users: [],
                 userById:  {_ in UserInfo.fakeItem()},
                 addUser: RenderContainer(viewToRender: AddUserComponent_Previews.previews),
-                userContainer: {_ in RenderContainer(viewToRender: DetailViewComponent_Previews.previews)}
+                userContainer: {_ in RenderContainer(viewToRender: DetailViewComponent_Previews.previews)},
+                usersAddedItem: []
             )
         )
     }

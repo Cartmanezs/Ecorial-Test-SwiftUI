@@ -31,7 +31,9 @@ extension AnyAction {
     
     struct AddUser: AppActionable {}
     
-    struct DidUserAdded: AppActionable {}
+    struct DidUserAdded: AppActionable {
+        let user: UserInfo
+    }
     
     struct LoadUserItems: AppActionable {}
     
