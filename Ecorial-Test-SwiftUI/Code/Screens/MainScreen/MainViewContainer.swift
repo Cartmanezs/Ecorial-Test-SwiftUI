@@ -19,14 +19,9 @@ struct MainViewContainer: Container {
             userContainer: { DetailViewContainer(userId: $0.id) }
         )
     }
-
+    
     func onContainerAppear(store: EnvironmentStore<AppState>) {
-//        if store.state.allUsers.byId.keys.isEmpty {
-//            let fake = UserInfo.fakeItems()
-//            store.dispatch(AnyAction.DidLoadItems(items: fake, id: UsersFlow.id))
-//        } else {
-            store.dispatch(AnyAction.LoadUserItems())
-        //}
+        store.dispatch(AnyAction.LoadUserItems())
     }
 }
 
