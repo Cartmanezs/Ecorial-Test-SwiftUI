@@ -95,62 +95,6 @@ extension UserInfo: Faking {
             )
         ]
     }
-    
-    static func fakeItems2() -> [UserInfo] {
-        [
-            .init(
-                id: .init(value: 1),
-                name: "1",
-                description: "Soldier, philanthropist, real hero",
-                dateStart: Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date(),
-                dateEnd: Calendar.current.date(byAdding: .month, value: 3, to: Date()) ?? Date(),
-                image: "background",
-                userPhoto: "userPhoto",
-                userStatus: Int.random(in: 0...1) == 0 ? .none : .favorite
-            ),
-            .init(
-                id: .init(value: 2),
-                name: "2",
-                description: "Test Test",
-                dateStart: Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date(),
-                dateEnd: Calendar.current.date(byAdding: .month, value: 3, to: Date()) ?? Date(),
-                image: "background",
-                userPhoto: "userPhoto",
-                userStatus: Int.random(in: 0...1) == 0 ? .none : .favorite
-            ),
-            .init(
-                id: .init(value: 3),
-                name: "3",
-                description: "Test Igor",
-                dateStart: Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date(),
-                dateEnd: Calendar.current.date(byAdding: .month, value: 3, to: Date()) ?? Date(),
-                image: "background",
-                userPhoto: "userPhoto",
-                userStatus: Int.random(in: 0...1) == 0 ? .none : .favorite
-            ),
-            .init(
-                id: .init(value: 4),
-                name: "4",
-                description: "Test Mark",
-                dateStart: Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date(),
-                dateEnd: Calendar.current.date(byAdding: .month, value: 3, to: Date()) ?? Date(),
-                image: "background",
-                userPhoto: "userPhoto",
-                userStatus: Int.random(in: 0...1) == 0 ? .none : .favorite
-            ),
-            .init(
-                id: .init(value: 5),
-                name: "5",
-                description: "Test Jo",
-                dateStart: Calendar.current.date(byAdding: .month, value: 2, to: Date()) ?? Date(),
-                dateEnd: Calendar.current.date(byAdding: .month, value: 3, to: Date()) ?? Date(),
-                image: "background",
-                userPhoto: "userPhoto",
-                userStatus: Int.random(in: 0...1) == 0 ? .none : .favorite
-            )
-        ]
-    }
-
 }
 
 enum UserStatus: String {

@@ -118,7 +118,7 @@ extension MainViewComponent {
     
     var usersList: some View {
         VStack(spacing: 5) {
-            ForEach(props.usersAddedItem, id: \.self) { user in
+            ForEach(allNoneUsers, id: \.self) { user in
                 UserRowView(user: user)
                     .onTapGesture {
                         withAnimation {
@@ -131,7 +131,7 @@ extension MainViewComponent {
     
     var favUsersList: some View {
         VStack(spacing: 5) {
-            ForEach(props.usersAddedItem, id: \.self) { user in
+            ForEach(favUsers, id: \.self) { user in
                 UserRowView(user: user)
                     .onTapGesture {
                         withAnimation {
@@ -145,6 +145,11 @@ extension MainViewComponent {
 
 // MARK: - Computed Properties
 extension MainViewComponent {
+    
+    var allNoneUsers: [UserInfo] {
+        users + props.usersAddedItem
+    }
+    
     var users: [UserInfo] {
         self.props.users.compactMap { self.props.userById($0) }.filter { $0.userStatus == .none}
     }

@@ -25,6 +25,4 @@ struct AppState: Reducible {
         addUserFlow.reduce(action)
         addUserForm.reduce(action)
     }
-    
-    
 }

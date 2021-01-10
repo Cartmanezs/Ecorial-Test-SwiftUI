@@ -10,7 +10,7 @@ import SwiftUI_UDF
 
 struct AddUserComponent: Component {
     struct Props {
-        var title: Binding<String>
+        var name: Binding<String>
         var dateStart: Binding<Date>
         var dateEnd: Binding<Date>
         var addUserAction: Command
@@ -47,7 +47,7 @@ extension AddUserComponent {
             Text(String.localized().addUser.persDescription)
                 .font(.subheadline)
             
-            TextField(String.localized().addUser.fullName, text: props.title)
+            TextField(String.localized().addUser.fullName, text: props.name)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.bottom, 5)
         }
@@ -84,7 +84,7 @@ struct AddUserComponent_Previews: PreviewProvider {
     static var previews: some View {
         AddUserComponent(props:
             .init(
-                title: .constant(""),
+                name: .constant(""),
                 dateStart: .constant(Date()),
                 dateEnd: .constant(Date()),
                 addUserAction: {},

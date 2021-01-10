@@ -10,7 +10,7 @@ import SwiftUI
 import SwiftUI_UDF
 
 struct AddUserForm: Reducible {
-    var title: String = ""
+    var name: String = ""
     var dateStart: Date = Date()
     var dateEnd: Date = Date()
     var error: String? = nil
@@ -19,7 +19,7 @@ struct AddUserForm: Reducible {
         switch action.value {
         
         case let action as AnyAction.UpdateUserTitle:
-            title = action.text
+            name = action.text
             
         case let action as AnyAction.UpdateDateStart:
             dateStart = action.date
@@ -42,7 +42,7 @@ struct AddUserForm: Reducible {
 //MARK: - Computed Properties
 extension AddUserForm {
     var isAddUserEnabled: Bool {
-        !title.isEmpty
+        !name.isEmpty
     }
 }
 
